@@ -257,7 +257,7 @@ def main():
         sub["pos1"] = sub["pos1"].astype(int)
         sub["finding_type"] = ["primary"] + ["secondary"] * (len(sub) - 1)
         sub["pos1"] = sub["pos1"].astype(int)
-        sub["proband_id"] = "WGS_EX2312012"
+        sub["proband_id"] = "PROBAND01"
         sub.to_parquet(os.path.join(OUT, "submission_input.parquet"), index=False)
     else:
         sub = pd.DataFrame(columns=["chrom1", "pos1", "ref1", "alt1", "chrom2", "pos2", "ref2", "alt2",

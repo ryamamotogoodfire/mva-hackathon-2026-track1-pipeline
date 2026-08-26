@@ -1,11 +1,11 @@
 proband_id,chrom_1,pos_1,ref_1,alt_1,chrom_2,pos_2,ref_2,alt_2,epcr,finding_type,notes
-WGS_EX2312012,chr15,40209701,T,G,chr15,40220612,T,G,0.9,primary,"compound-het BUB1B; ptv + missense_consensus; HPO: HP:0001518,HP:0002859,HP:0004322"
-WGS_EX2312012,chr12,7190513,GCCTCTGAGGCAGTGAGTGTTCTTGAGGTGGAAAGCCCAGGTGCA,-,,,,,0.07,secondary,"ptv; zygosity hom_alt; HPO: HP:0001508,HP:0001622,HP:0003202,HP:0004322; top mechanical total, outranked by the MVA-specificity rule"
-WGS_EX2312012,chr6,157186528,C,T,,,,,0.05,secondary,"ptv; zygosity het; HPO: HP:0001508,HP:0004322"
-WGS_EX2312012,chr16,88714227,GGTGTG,-,,,,,0.045,secondary,ptv; zygosity hom_alt; HPO: HP:0004322
-WGS_EX2312012,chr22,20996720,C,G,,,,,0.04,secondary,ptv; zygosity het; HPO: 
-WGS_EX2312012,chr21,43169811,-,C,,,,,0.04,secondary,ptv; zygosity hom_alt; HPO: 
-WGS_EX2312012,chr6,160139866,TGGTAAGT,-,,,,,0.035,secondary,ptv; zygosity hom_alt; HPO: 
-WGS_EX2312012,chr2,46759758,C,T,,,,,0.03,secondary,ptv; zygosity het; HPO: 
-WGS_EX2312012,chr3,9374570,G,T,,,,,0.03,secondary,ptv; zygosity het; HPO: 
-WGS_EX2312012,chr7,7673311,AGCAGCAGC,-,,,,,0.03,secondary,ptv; zygosity het; HPO: 
+PROBAND01,chr15,40209701,T,G,chr15,40220612,T,G,0.9,primary,"compound-het BUB1B; ptv + missense_consensus; HPO: HP:0001518,HP:0002859,HP:0004322"
+PROBAND01,chr12,7190513,GCCTCTGAGGCAGTGAGTGTTCTTGAGGTGGAAAGCCCAGGTGCA,-,,,,,0.07,secondary,"ptv; zygosity hom_alt; HPO: HP:0001508,HP:0001622,HP:0003202,HP:0004322; top mechanical total, outranked by the MVA-specificity rule"
+PROBAND01,chr6,157186528,C,T,,,,,0.05,secondary,"ptv; zygosity het; HPO: HP:0001508,HP:0004322"
+PROBAND01,chr16,88714227,GGTGTG,-,,,,,0.045,secondary,ptv; zygosity hom_alt; HPO: HP:0004322
+PROBAND01,chr22,20996720,C,G,,,,,0.04,secondary,ptv; zygosity het; HPO: 
+PROBAND01,chr21,43169811,-,C,,,,,0.04,secondary,ptv; zygosity hom_alt; HPO: 
+PROBAND01,chr6,160139866,TGGTAAGT,-,,,,,0.035,secondary,ptv; zygosity hom_alt; HPO: 
+PROBAND01,chr2,46759758,C,T,,,,,0.03,secondary,ptv; zygosity het; HPO: 
+PROBAND01,chr3,9374570,G,T,,,,,0.03,secondary,ptv; zygosity het; HPO: 
+PROBAND01,chr7,7673311,AGCAGCAGC,-,,,,,0.03,secondary,ptv; zygosity het; HPO: 

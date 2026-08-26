@@ -73,7 +73,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("ranked_parquet", help="ranked candidates (paired columns chrom1..alt2)")
     ap.add_argument("out_csv")
-    ap.add_argument("--proband", default="WGS_EX2312012")
+    ap.add_argument("--proband", default="PROBAND01")
     ap.add_argument("--max-rows", type=int, default=10)
     args = ap.parse_args()
 
