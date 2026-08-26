@@ -1,6 +1,6 @@
 # Methods description, MVA Hackathon 2026, Track 1 (Variant Prediction)
 
-Rename this file to `<your HF username>_track1_report.md` before uploading. Team name: TO FILL.
+Team name: Silico EVEE.
 
 ## Approach in detail
 
@@ -45,5 +45,5 @@ We prioritized causal-variant candidates for a pediatric MVA case from a single 
 
 ## Supporting materials
 
-- Predictions file: `TEAMNAME_bub1b-comphet.csv` (rename with your team name).
+- Predictions file: `Silico-EVEE_bub1b-comphet.csv`.
 - Code: public GitHub repository link TO FILL (pipeline source is packaged with this submission package).

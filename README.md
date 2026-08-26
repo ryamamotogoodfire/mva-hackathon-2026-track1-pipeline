@@ -19,8 +19,8 @@ The repository reproduces the full analysis from the gated challenge dataset to 
 ## Repository contents
 
 - `pipeline/` holds the runnable source. It covers download and QC, VEP annotation, candidate mining, the GPN-MSA scoring lane, the combine-and-rank step, the submission writer, and the report figures.
-- `submission/TEAMNAME_track1_report.md` is the methods report for the challenge upload. Rename TEAMNAME with your team name before uploading.
-- `submission/TEAMNAME_bub1b-comphet.csv` is the validated submission file in challenge schema. Rename TEAMNAME with your team name. It matches `pipeline/track1_submission_template.csv` in format.
+- `submission/Silico-EVEE_track1_report.md` is the methods report for the challenge upload. Team name: Silico EVEE.
+- `submission/Silico-EVEE_bub1b-comphet.csv` is the validated submission file in challenge schema. It matches `pipeline/track1_submission_template.csv` in format.
 - `LICENSE` is the CC BY 4.0 text required by the hackathon for released submissions.
 
 The EVEE lane is the one stage not runnable from this repository alone. It ran with Goodfire's publicly released code at github.com/goodfire-ai/evee-manuscript, pinned to commit e5e4a43d60bb217819144c09ab509ed44f49cd5f. The exact reproduction parameters are in the EVEE lane section below. Everything else runs from `pipeline/` with public dependencies only.
@@ -98,10 +98,10 @@ pip install -r pipeline/requirements.txt
    ```bash
    python3 pipeline/write_submission.py \
      "$DATA_DIR/mva-track1/ranking/submission_input.parquet" \
-     submission/TEAMNAME_bub1b-comphet.csv
+     submission/Silico-EVEE_bub1b-comphet.csv
    ```
 
-9. Report builder. `pipeline/plot_report_figs.py` regenerates the two report figures, the candidate funnel and the GPN-MSA candidate-versus-control distribution, into `figures/`. The methods narrative for the challenge upload is `submission/TEAMNAME_track1_report.md`.
+9. Report builder. `pipeline/plot_report_figs.py` regenerates the two report figures, the candidate funnel and the GPN-MSA candidate-versus-control distribution, into `figures/`. The methods narrative for the challenge upload is `submission/Silico-EVEE_track1_report.md`.
 
 ## The EVEE lane
 
