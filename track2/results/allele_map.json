@@ -1,0 +1,371 @@
+{
+  "sources": {
+    "ensembl_lookup": "https://rest.ensembl.org/lookup/id/ENST00000287598?expand=1",
+    "ensembl_map_check": "https://rest.ensembl.org/map/cds/ENST00000287598/2210..2210",
+    "refseq_cds": "https://rest.ensembl.org/sequence/id/ENST00000287598?type=cds",
+    "refseq_protein": "https://rest.ensembl.org/sequence/id/ENST00000287598?type=protein",
+    "uniprot_features": "https://rest.uniprot.org/uniprotkb/O60566.json",
+    "alphafold_metadata": "https://alphafold.ebi.ac.uk/api/prediction/O60566",
+    "genomic_context": "https://rest.ensembl.org/sequence/region/human/15:40209686..40209716:1"
+  },
+  "transcript": "ENST00000287598",
+  "refseq": "NM_001211.6",
+  "transcript_meta": {
+    "exon_count": 23,
+    "strand": 1,
+    "biotype": "protein_coding",
+    "is_canonical": 1,
+    "translation_id": "ENSP00000287598",
+    "translation_length_aa": 1050,
+    "cds_genomic_span": "40161221-40220759",
+    "transcript_version": 11,
+    "assembly": "GRCh38"
+  },
+  "cds_blocks": [
+    {
+      "rank": 1,
+      "exon_id": "ENSE00001929183",
+      "g0": 40161221,
+      "g1": 40161255,
+      "cds_block_len": 35,
+      "cds_end_cum": 35
+    },
+    {
+      "rank": 2,
+      "exon_id": "ENSE00003642586",
+      "g0": 40165053,
+      "g1": 40165196,
+      "cds_block_len": 144,
+      "cds_end_cum": 179
+    },
+    {
+      "rank": 3,
+      "exon_id": "ENSE00003506275",
+      "g0": 40170062,
+      "g1": 40170121,
+      "cds_block_len": 60,
+      "cds_end_cum": 239
+    },
+    {
+      "rank": 4,
+      "exon_id": "ENSE00003578473",
+      "g0": 40170537,
+      "g1": 40170681,
+      "cds_block_len": 145,
+      "cds_end_cum": 384
+    },
+    {
+      "rank": 5,
+      "exon_id": "ENSE00001029411",
+      "g0": 40176477,
+      "g1": 40176673,
+      "cds_block_len": 197,
+      "cds_end_cum": 581
+    },
+    {
+      "rank": 6,
+      "exon_id": "ENSE00001029410",
+      "g0": 40183714,
+      "g1": 40183883,
+      "cds_block_len": 170,
+      "cds_end_cum": 751
+    },
+    {
+      "rank": 7,
+      "exon_id": "ENSE00001029414",
+      "g0": 40185165,
+      "g1": 40185379,
+      "cds_block_len": 215,
+      "cds_end_cum": 966
+    },
+    {
+      "rank": 8,
+      "exon_id": "ENSE00001029407",
+      "g0": 40185551,
+      "g1": 40185642,
+      "cds_block_len": 92,
+      "cds_end_cum": 1058
+    },
+    {
+      "rank": 9,
+      "exon_id": "ENSE00003514834",
+      "g0": 40196545,
+      "g1": 40196774,
+      "cds_block_len": 230,
+      "cds_end_cum": 1288
+    },
+    {
+      "rank": 10,
+      "exon_id": "ENSE00003683831",
+      "g0": 40199615,
+      "g1": 40199727,
+      "cds_block_len": 113,
+      "cds_end_cum": 1401
+    },
+    {
+      "rank": 11,
+      "exon_id": "ENSE00003589403",
+      "g0": 40200244,
+      "g1": 40200359,
+      "cds_block_len": 116,
+      "cds_end_cum": 1517
+    },
+    {
+      "rank": 12,
+      "exon_id": "ENSE00003561918",
+      "g0": 40200931,
+      "g1": 40200980,
+      "cds_block_len": 50,
+      "cds_end_cum": 1567
+    },
+    {
+      "rank": 13,
+      "exon_id": "ENSE00003520890",
+      "g0": 40202405,
+      "g1": 40202465,
+      "cds_block_len": 61,
+      "cds_end_cum": 1628
+    },
+    {
+      "rank": 14,
+      "exon_id": "ENSE00003593922",
+      "g0": 40202589,
+      "g1": 40202694,
+      "cds_block_len": 106,
+      "cds_end_cum": 1734
+    },
+    {
+      "rank": 15,
+      "exon_id": "ENSE00001029402",
+      "g0": 40206184,
+      "g1": 40206458,
+      "cds_block_len": 275,
+      "cds_end_cum": 2009
+    },
+    {
+      "rank": 16,
+      "exon_id": "ENSE00001029391",
+      "g0": 40208637,
+      "g1": 40208770,
+      "cds_block_len": 134,
+      "cds_end_cum": 2143
+    },
+    {
+      "rank": 17,
+      "exon_id": "ENSE00001029409",
+      "g0": 40209635,
+      "g1": 40209775,
+      "cds_block_len": 141,
+      "cds_end_cum": 2284
+    },
+    {
+      "rank": 18,
+      "exon_id": "ENSE00001029401",
+      "g0": 40210110,
+      "g1": 40210210,
+      "cds_block_len": 101,
+      "cds_end_cum": 2385
+    },
+    {
+      "rank": 19,
+      "exon_id": "ENSE00001029392",
+      "g0": 40212499,
+      "g1": 40212648,
+      "cds_block_len": 150,
+      "cds_end_cum": 2535
+    },
+    {
+      "rank": 20,
+      "exon_id": "ENSE00001029395",
+      "g0": 40213332,
+      "g1": 40213474,
+      "cds_block_len": 143,
+      "cds_end_cum": 2678
+    },
+    {
+      "rank": 21,
+      "exon_id": "ENSE00001029397",
+      "g0": 40217496,
+      "g1": 40217667,
+      "cds_block_len": 172,
+      "cds_end_cum": 2850
+    },
+    {
+      "rank": 22,
+      "exon_id": "ENSE00003491855",
+      "g0": 40218456,
+      "g1": 40218562,
+      "cds_block_len": 107,
+      "cds_end_cum": 2957
+    },
+    {
+      "rank": 23,
+      "exon_id": "ENSE00001948417",
+      "g0": 40220564,
+      "g1": 40220759,
+      "cds_block_len": 196,
+      "cds_end_cum": 3153
+    }
+  ],
+  "map_check_2210_to_genomic": {
+    "start": 40209701,
+    "strand": 1
+  },
+  "cds_length_nt": 3153,
+  "protein_length_aa": 1050,
+  "alleles": {
+    "p.Leu737Ter": {
+      "cdna_position": 2210,
+      "codon_start": 2209,
+      "ref_base_matches_genomic_ref": true,
+      "reference_codon": "TTA",
+      "alternate_codon": "TGA",
+      "reference_aa": "L",
+      "alternate_aa": "*",
+      "cds_context_minus20_plus19": "ACTGAAGTCCCTACCAGAGTTAAGTGCCTCTGCAGAGTTG"
+    },
+    "p.Asn1002Lys": {
+      "cdna_position": 3006,
+      "codon_start": 3004,
+      "ref_base_matches_genomic_ref": true,
+      "reference_codon": "AAT",
+      "alternate_codon": "AAG",
+      "reference_aa": "N",
+      "alternate_aa": "K",
+      "cds_context_minus20_plus19": "TTCTTTGTGCGGATTCTGAATGCCAATGATGAGGCCACAG"
+    }
+  },
+  "stop_codon_context": {
+    "stop_codon": "TGA",
+    "tetranucleotide": "TGAA",
+    "upstream_6nt": "CCAGAG",
+    "downstream_9nt_after_stop": "AGTGCCTCT"
+  },
+  "exon_assignment": {
+    "p.Leu737Ter": {
+      "exon_rank": 17,
+      "exon_id": "ENSE00001029409",
+      "of_exons": 23
+    },
+    "p.Asn1002Lys": {
+      "exon_rank": 23,
+      "exon_id": "ENSE00001948417",
+      "of_exons": 23
+    }
+  },
+  "nmd_rule": {
+    "ptc_codon_start_cds": 2209,
+    "last_exon_junction_cds": 2957,
+    "distance_ptc_to_last_junction_nt": 748,
+    "downstream_exon_junctions": 6,
+    "downstream_junction_cds_positions": [
+      2284,
+      2385,
+      2535,
+      2678,
+      2850,
+      2957
+    ],
+    "rule": "NMD predicted when the PTC lies >~50 nt upstream of the 3'-most exon-exon junction",
+    "nmd_predicted": true,
+    "nmd_margin_vs_50nt": 698,
+    "fraction_protein_retained_if_transcript_survives": 0.701,
+    "fraction_protein_lost_if_transcript_survives": 0.299
+  },
+  "missense_nmd": {
+    "in_last_exon": true,
+    "escapes_nmd": true
+  },
+  "uniprot_features": [
+    {
+      "type": "Domain",
+      "description": "BUB1 N-terminal",
+      "start": 62,
+      "end": 226
+    },
+    {
+      "type": "Domain",
+      "description": "Protein kinase",
+      "start": 766,
+      "end": 1050
+    },
+    {
+      "type": "Region",
+      "description": "Necessary for interaction with KNL1",
+      "start": 152,
+      "end": 185
+    },
+    {
+      "type": "Region",
+      "description": "Disordered",
+      "start": 368,
+      "end": 393
+    },
+    {
+      "type": "Region",
+      "description": "Disordered",
+      "start": 456,
+      "end": 480
+    },
+    {
+      "type": "Motif",
+      "description": "Nuclear localization signal",
+      "start": 111,
+      "end": 118
+    },
+    {
+      "type": "Motif",
+      "description": "D-box",
+      "start": 224,
+      "end": 232
+    },
+    {
+      "type": "Active site",
+      "description": "Proton acceptor",
+      "start": 882,
+      "end": 882
+    },
+    {
+      "type": "Binding site",
+      "description": "",
+      "start": 772,
+      "end": 780
+    },
+    {
+      "type": "Binding site",
+      "description": "",
+      "start": 795,
+      "end": 795
+    },
+    {
+      "type": "Site",
+      "description": "Cleavage; by caspase-3",
+      "start": 579,
+      "end": 580
+    },
+    {
+      "type": "Site",
+      "description": "Cleavage; by caspase-3",
+      "start": 610,
+      "end": 611
+    }
+  ],
+  "kinase_domain": {
+    "type": "Domain",
+    "description": "Protein kinase",
+    "start": 766,
+    "end": 1050
+  },
+  "n1002_inside_kinase_domain": true,
+  "l737_inside_kinase_domain": false,
+  "alphafold_model_url": "https://alphafold.ebi.ac.uk/files/AF-O60566-F1-model_v6.pdb",
+  "alphafold_plddt": {
+    "n_residues": 1050,
+    "res_737": 73.56,
+    "res_1002": 91.06,
+    "window_720_750": 81.4,
+    "window_990_1015": 91.5,
+    "window_900_1050": 81.4
+  },
+  "genomic_context_15flank_stop": "AGTCCCTACCAGAGTTAAGTGCCTCTGCAGA"
+}

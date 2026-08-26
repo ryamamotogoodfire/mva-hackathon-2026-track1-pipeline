@@ -22,6 +22,7 @@ The repository reproduces the full analysis from the gated challenge dataset to 
 - `submission/Silico-EVEE_track1_report.md` is the methods report for the challenge upload. Team name: Silico EVEE.
 - `submission/Silico-EVEE_bub1b-comphet.csv` is the validated submission file in challenge schema. It matches `pipeline/track1_submission_template.csv` in format.
 - `LICENSE` is the CC BY 4.0 text required by the hackathon for released submissions.
+- `track2/` is the Track 2 drug-repurposing chapter. It carries the verified allele mechanism map, the graded candidate screen, the submission report, and the scripts that produced them.
 
 The EVEE lane is the one stage not runnable from this repository alone. It ran with Goodfire's publicly released code at github.com/goodfire-ai/evee-manuscript, pinned to commit e5e4a43d60bb217819144c09ab509ed44f49cd5f. The exact reproduction parameters are in the EVEE lane section below. Everything else runs from `pipeline/` with public dependencies only.
 
@@ -114,6 +115,14 @@ EVEE scoring used the public code and released probe weights from github.com/goo
 - The GPN-MSA stack reproduced the published baseline logits to four decimal places, and streamed alignment-store reads matched the published fixture tokens exactly.
 - The EVEE probe matched the released holdout predictions 8 of 8.
 - The submission CSV passed schema validation, 10 rows, chr-prefixed chromosomes, monotone EPCR, and pair rows with complete second-variant fields.
+
+
+## Track 2. Drug repurposing from the BUB1B pair
+
+Track 2 asks whether an existing approved medication is a plausible candidate against the mechanism Track 1 found. The answer from this repository's analysis is a verified no for function restoration. The stop-gain transcript is destroyed by nonsense-mediated decay 748 nucleotides before the last exon junction, so readthrough drugs have no substrate, and the stop context itself is permissive. The missense allele sits in the last exon inside the BUBR1 pseudokinase domain and fits the instability class. Metformin is proposed as a secondary-prevention hypothesis, amlexanox is named at bench grade as the only approved molecule that tackles the decay blocker directly, and every rejection is recorded with its reason and citation.
+
+- [track2/Silico-EVEE_track2_report.md](track2/Silico-EVEE_track2_report.md) is the full Track 2 submission report, including the official methods-description answers.
+- [track2/README.md](track2/README.md) documents the chapter and its reproduction steps.
 
 ## Acknowledgement
 

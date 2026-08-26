@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Recommendation synthesis for Track 2 (plan step 3).
+
+Encodes the falsifiable mechanism chains, the dosage-threshold argument, the
+secondary-prevention framing required by the proband's own HPO record, and the
+preceptor review checklist. Loads the verified allele map and the curated
+candidate grades so the synthesis cannot drift from them.
+"""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+RESULTS = HERE.parent / "results"
+
+allele = json.loads(RESULTS.joinpath("allele_map.json").read_text())
+cands = json.loads(RESULTS.joinpath("candidate_grades.json").read_text())
+
+primary = next(c for c in cands if c["verdict"] == "primary")
+fallback = next(c for c in cands if c["verdict"] == "fallback-research")
+
+syn = {
+    "headline": (
+        "No approved medication restores BUBR1 from these two alleles. One approved, "
+        "pediatric-labeled agent, metformin, is proposed as a secondary-prevention "
+        "hypothesis against further aneuploidy-driven tumors, graded on explicit weak "
+        "evidence. The only mechanism-faithful restore-class option that an approved "
+        "molecule could answer, amlexanox, is a bench-stage research hypothesis, "
+        "testable in weeks on proband cells."
+    ),
+    "secondary_prevention_note": (
+        "The proband's phenotype record already includes rhabdomyosarcoma, an "
+        "MVA-spectrum tumor. The protect axis is therefore framed as secondary "
+        "prevention (reducing risk of subsequent MVA-spectrum tumors plus sharper "
+        "surveillance), not primary chemoprevention. Any panel reading should test "
+        "every proposal against that framing."
+    ),
+    "dosage_threshold_argument": {
+        "premise": "The benefit of any restore therapy scales with residual functional BUBR1.",
+        "rungs": [
+            {"level": "about 10 percent (compound hypomorph mice)",
+             "outcome": "severe aneuploidy, progeroid phenotypes",
+             "pmid": "15208629"},
+            {"level": "about 50 percent (germline heterozygous mice)",
+             "outcome": "elevated carcinogen-induced tumor development",
+             "pmid": "14744753"},
+            {"level": "above 100 percent (transgenic overexpression)",
+             "outcome": "protection from aneuploidy-driven cancer even under oncogenic Ras",
+             "pmid": "23242215"},
+        ],
+        "conclusion": (
+            "The protective boundary in mice sits at or above the heterozygote level. "
+            "Readthrough-class recovery of a few percent of protein cannot cross it. "
+            "MVA-missense alleles also reduce BubR1 abundance through protein "
+            "instability (PMID 20516114), so both proband alleles act as dosage loss, "
+            "and the dosage curve governs all candidate grading."
+        ),
+    },
+    "falsifiable_chains": {
+        "restore": [
+            "R1. Proband fibroblasts show BUBR1 protein at a small fraction of parental/family-control level by Western blot, consistent with NMD loss of the p.Leu737Ter transcript plus instability of the p.Asn1002Lys product. Falsifies the shared-dosage-loss model.",
+            "R2. Amlexanox at tolerated in-vitro concentrations raises the abundance of the PTC-transcript measured by allele-specific qPCR, and only then full-length BUBR1 on Western. Predicted recovery is below 5 percent for this UGA-A context and therefore fails the threshold; the experiment, not the prediction, decides.",
+            "R3. Complementation with wild-type versus pseudokinase-domain-deletion BUBR1 in proband cells separates catalysis from scaffold loss and directly characterizes the missense allele, which all in silico predictors call damaging (Track 1).",
+        ],
+        "protect": [
+            "P1. Serially passaged proband fibroblasts accumulate lagging chromosomes and micronuclei at a higher rate than matched family controls. This validates an intrinsic, measureable aneuploidy-prone state in a non-tumor tissue of this patient.",
+            "P2. Metformin at exposures achievable in children (low micromolar) reduces the outgrowth of the aneuploid subfraction in those cultures relative to euploid control cultures, quantified by karyotype-resolved colony counts. A null here falsifies the prevention hypothesis before any clinical proposal.",
+        ],
+    },
+    "primary_recommendation": {
+        "agent": "metformin immediate-release",
+        "framing": "secondary-prevention research hypothesis plus monitoring plan",
+        "verdict": primary["verdict_reason"],
+        "monitoring": [
+            "renal function before start and periodically (lactic acidosis contraindication context)",
+            "vitamin B12 on long-term use (PMID 26900641)",
+            "growth and weight follow-up per pediatric guidance",
+        ],
+    },
+    "fallback_recommendation": {
+        "agent": "amlexanox",
+        "framing": "bench proof-of-mechanism against the PTC allele on proband cells; not a clinical offer",
+        "verdict": fallback["verdict_reason"],
+    },
+    "explicitly_not_recommended": [
+        {"agent": "ataluren", "reason": "EU authorisation lapsed 2025-03-28 after unconfirmed effectiveness; NMD-dominant allele; UGA-A context; failed phase 3 in two diseases."},
+        {"agent": "aminoglycosides for readthrough", "reason": "ototoxic/nephrotoxic in children, rescue levels far below threshold, NMD-limited substrate."},
+        {"agent": "sirolimus/everolimus", "reason": "mTOR inhibition relieves the proteostasis bottleneck of aneuploid cells (wrong direction), and the sirolimus label warns of malignancy from immunosuppression."},
+        {"agent": "Mps1/TTK and Aurora B inhibitors", "reason": "remove residual checkpoint signaling, raising mis-segregation; none approved; use-case is treating established aneuploid tumors, not prevention."},
+        {"agent": "aspirin", "reason": "pediatric contraindication (Reye class warning) and tumor-spectrum mismatch despite positive Lynch RCT precedent."},
+        {"agent": "bortezomib / Hsp90 inhibitors", "reason": "prophylaxis-incompatible toxicity; one is investigational."},
+    ],
+    "preceptor_review_checklist": [
+        "Confirm the trans configuration of the two alleles by parental testing. Track 1 stated compound-het is inferred from co-occurrence, not proven in trans.",
+        "Confirm the current oncology status of the child and treat the proposal as secondary prevention plus surveillance, with the treating team owning all medication decisions.",
+        "Check renal function, metformin interactions with any active oncology regimen, and B12 at baseline.",
+        "Re-run ClinVar and gnomAD interpretation of the two alleles at submission time; both submitters flagged poor gnomAD data quality at the PTC position.",
+        "Treat the PEX5 homozygous deletion disclosure from Track 1 as a completeness footnote, unrelated to the BUB1B mechanism chain.",
+    ],
+    "preclinical_directions_proposed": [
+        "sup-tRNA and engineered tRNA readthrough, mutation-type matched to UGA",
+        "antisense/splice modulation to bypass the affected exon 17 segment",
+        "prime editing correction of c.2210T>G (transversion, so base editors cannot do it)",
+        "AAV-compatible BUBR1 cDNA augmentation; the coding sequence is about 3.2 kb",
+    ],
+}
+
+RESULTS.joinpath("recommendation_synthesis.json").write_text(json.dumps(syn, indent=2) + "\n")
+print("OK wrote results/recommendation_synthesis.json")
+print(json.dumps(syn["primary_recommendation"], indent=2))

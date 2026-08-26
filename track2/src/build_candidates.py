@@ -1,0 +1,290 @@
+#!/usr/bin/env python3
+"""Curated candidate grades for Track 2 (Q1 restore, Q2 protect).
+
+Hand-curated grading on top of the machine-checked facts in
+results/allele_map.json and results/regulatory_status.json. Every retained
+claim carries a checkable citation (PMID/DOI, label text retrieved from
+openFDA/DailyMed, or the EMA EPAR page). Axis grades use a fixed vocabulary:
+
+  mechanism_tie         strong | moderate | weak | wrong-direction
+  preclinical_evidence  direct-human | direct-animal | indirect | none
+  regulatory            approved-current | approved-lapsed | none
+  pediatric_experience  labeled | studied | none
+  spectrum_fit          direct | indirect | none
+  verdict               primary | fallback-research | rejected | comparator
+
+Output: results/candidate_grades.json and results/candidate_grades.md
+"""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+RESULTS = HERE.parent / "results"
+
+allele = json.loads(RESULTS.joinpath("allele_map.json").read_text())
+reg = json.loads(RESULTS.joinpath("regulatory_status.json").read_text())
+
+
+def chembl(drug):
+    e = reg[drug]["entries"][0] if reg.get(drug, {}).get("entries") else {}
+    return {"chembl_id": e.get("chembl_id"), "max_phase": e.get("max_phase"),
+            "first_approval": e.get("first_approval"), "withdrawn_flag": e.get("withdrawn_flag")}
+
+
+C = []
+
+C.append({
+    "id": "C1-ataluren",
+    "axis": "restore",
+    "class": "nonsense readthrough, selective small-molecule",
+    "agent": "ataluren (Translarna/PTC124)",
+    "chembl": chembl("ataluren"),
+    "mechanism_tie": "strong",
+    "mechanism_note": "Selectively induces ribosomal readthrough of premature, not normal, termination codons (Welch 2007). The target allele carries a UGA PTC, the class ataluren was optimized against.",
+    "blocking_facts": [
+        "The PTC transcript is NMD-targeted: 748 nt upstream of the last exon-exon junction with six downstream junctions (allele_map.json), far past the ~50 nt rule (Le Hir 2001; Lindeboom 2016). NMD degrades the transcript before translation, so the readthrough substrate is largely absent (Linde 2007).",
+        "The tetranucleotide is UGA-A (TGAA), a permissive readthrough context, though weaker than TGAC, which gives the strongest basal and drug-induced readthrough (Dabrowski 2015; Floquet 2012). This window is not the class blocker; the NMD substrate loss is.",
+        "Clinical efficacy record is negative to mixed: phase 3 in nonsense-mutation CF missed its primary endpoint (Kerem 2014); ACT DMD did not meet its primary endpoint at the prespecified significance level (McDonald 2017).",
+        "Regulatory status today: the EU conditional marketing authorisation was not renewed and expired 2025-03-28 because effectiveness was not confirmed (EMA EPAR page). Never approved in the US.",
+    ],
+    "preclinical_evidence": "direct-human-trial-negative",
+    "regulatory": "approved-lapsed",
+    "pediatric_experience": "labeled (was, age >= 2y, DMD indication)",
+    "spectrum_fit": "none",
+    "verdict": "rejected",
+    "verdict_reason": "NMD-dominant allele plus a context weaker than TGAC plus a failed-efficacy regulatory record removes ataluren as a credible candidate.",
+    "citations": [
+        {"pmid": "17450125", "supports": "PTC124 readthrough mechanism and nonsense-targeting selectivity"},
+        {"pmid": "28728956", "supports": "ACT DMD phase 3 outcome"},
+        {"pmid": "24836205", "supports": "nonsense-CF phase 3 primary endpoint missed"},
+        {"pmid": "17290305", "supports": "NMD governs response to readthrough treatment"},
+        {"pmid": "26176195", "supports": "stop-codon context ranking, UGA-C best"},
+        {"pmid": "22479203", "supports": "readthrough level determinants"},
+        {"url": "https://www.ema.europa.eu/en/medicines/human/EPAR/translarna", "supports": "EU authorisation history and 2025-03-28 expiry after non-renewal"},
+    ],
+})
+
+C.append({
+    "id": "C2-aminoglycosides",
+    "axis": "restore",
+    "class": "nonsense readthrough, aminoglycoside antibiotics",
+    "agents": ["gentamicin", "amikacin", "G418 (research only)"],
+    "chembl": {k: chembl(k) for k in ("gentamicin", "amikacin")},
+    "mechanism_tie": "strong",
+    "mechanism_note": "Aminoglycosides bind the decoding center and force near-cognate tRNA acceptance at stop codons; efficacy depends on stop context (Howard 2000). UGA-A is a permissive context for this class, weaker than TGAC.",
+    "blocking_facts": [
+        "Same NMD problem as ataluren: little transcript survives to be read through (Linde 2007).",
+        "Class-limiting pediatric toxicity: ototoxicity and nephrotoxicity. Chronic dosing in a child for a prophylaxis hypothesis is not acceptable without a dramatic efficacy lead.",
+        "Clinical rescue levels are small: in CFTR stop-mutation patients, gentamicin gave partial functional correction, not protein-level normalization (Wilschanski 2003).",
+        "Eliminating even 5-20% function recovery is far below the level this allele requires to matter (see dosage-threshold evidence: Dai 2004, Baker 2004, Baker 2013).",
+    ],
+    "preclinical_evidence": "direct-human",
+    "regulatory": "approved-current (antibiotic indications only, not readthrough)",
+    "pediatric_experience": "labeled (antibiotic); toxicity profile hostile to chronic use",
+    "spectrum_fit": "none",
+    "verdict": "rejected",
+    "verdict_reason": "Toxicity, weak context-matched efficacy, and the NMD substrate problem; keep as a lab control only.",
+    "citations": [
+        {"pmid": "10939566", "supports": "context-specificity of aminoglycoside readthrough"},
+        {"pmid": "14534336", "supports": "gentamicin partial CFTR functional correction in patients"},
+        {"pmid": "17290305", "supports": "NMD limits readthrough substrate"},
+    ],
+})
+
+C.append({
+    "id": "C3-amlexanox",
+    "axis": "restore",
+    "class": "dual NMD inhibition plus PTC readthrough, repurposed small molecule",
+    "agent": "amlexanox (Aphthasol; Solfa-A in Japan)",
+    "chembl": chembl("amlexanox"),
+    "mechanism_tie": "strong",
+    "mechanism_note": "Uniquely among approved agents, amlexanox both stabilizes nonsense-containing mRNAs (inhibits NMD) and promotes PTC readthrough, producing full-length functional protein in patient-derived cells (Salvatori 2012; Atanasova 2017). This is the only approved molecule whose dual action directly addresses the blocking biology of this allele (an NMD-targeted UGA PTC).",
+    "blocking_facts": [
+        "Evidence is early preclinical: patient-cell studies in three genes (TP53/CFTR/DMD-class reporters in Salvatori 2012) and COL7A1 (Atanasova 2017); no animal efficacy study for a systemic nonsense disease; no human trial for any nonsense indication.",
+        "Systemic exposure: marketed as a 5% topical paste in the US and as an oral anti-allergy drug in Japan (Dabrowski 2018); pediatric systemic safety is not established.",
+        "Dose required for NMD modulation in vitro sits above typical systemic exposure from topical dosing.",
+        "The second allele (p.Asn1002Lys) is a last-exon kinase-domain missense, unreachable by this mechanism.",
+    ],
+    "preclinical_evidence": "direct-human-cells",
+    "regulatory": "approved-current (topical, US; oral, Japan)",
+    "pediatric_experience": "none",
+    "spectrum_fit": "none",
+    "verdict": "fallback-research",
+    "verdict_reason": "Only approved-class candidate whose mechanism answers the allele's actual blocker (NMD). Recommendation: proband fibroblast/patient-cell proof-of-mechanism study, not a clinical proposal. Falsifiable at the bench within weeks.",
+    "citations": [
+        {"pmid": "22938201", "supports": "amlexanox stabilizes nonsense mRNAs and yields full-length functional protein in human patient cells"},
+        {"pmid": "28549954", "supports": "full-length type VII collagen from PTC alleles ex vivo"},
+        {"pmid": "30134808", "supports": "drug-stimulated translational readthrough review and amlexanox approval landscape"},
+    ],
+})
+
+C.append({
+    "id": "C4-metformin",
+    "axis": "protect",
+    "class": "metabolic stress, AMPK-pathway biguanide",
+    "agent": "metformin (immediate-release)",
+    "chembl": chembl("metformin"),
+    "mechanism_tie": "moderate",
+    "mechanism_note": "Aneuploid cells suffer energy, proteotoxic, and lysosomal stress; AICAR, the pharmacological energy-stress inducer in the same AMPK-family axis, selectively kills aneuploid cells (Tang 2011; Santaguida 2015; reviews 2020s). Metformin is the approved pediatric-safe agent in that mechanistic neighborhood. The tie is indirect: no study has shown aneuploidy-selective fitness reduction with metformin itself.",
+    "supporting_facts": [
+        "Pediatric safety is the strongest of any candidate class: FDA label establishes safety and effectiveness for type 2 diabetes in children 10-16 years (openFDA label record); the TODAY trial studied late teens (Zeitler 2012).",
+        "Chronic-use risk profile is mild and monitorable: vitamin B12 deficiency on long-term use (DPPOS, PMID 26900641); boxed warning for lactic acidosis is a renal-failure-context contraindication, managed by renal monitoring.",
+        "Population-level cancer-prevention signals in diabetic cohorts are consistent but confounded (Decensi 2010 meta-analysis; Pollak 2012 review).",
+    ],
+    "blocking_facts": [
+        "No direct aneuploidy-selectivity evidence for metformin; the AICAR composite in Tang 2011 combined three agents.",
+        "A germline carrier's normal tissues are not yet aneuploid; the drug can only act by reducing the fitness of emerging aneuploid clones, a prevention scenario untested in any organism.",
+        "Observational diabetes-cohort data cannot be transferred to germline-LoF prevention.",
+    ],
+    "preclinical_evidence": "indirect",
+    "regulatory": "approved-current (US >=10y T2D; worldwide)",
+    "pediatric_experience": "labeled (10-16y T2D)",
+    "spectrum_fit": "indirect (general tumor-prevention logic, no MVA-specific data)",
+    "verdict": "primary",
+    "verdict_reason": "Only candidate with an unimpeachable pediatric safety record plus a defensible, falsifiable mechanism chain. Presented as a prophylaxis hypothesis with explicit preclinical tests, not a treatment recommendation.",
+    "citations": [
+        {"pmid": "21315436", "supports": "energy stress (AICAR) selectively antiproliferates aneuploid cells"},
+        {"pmid": "26404941", "supports": "aneuploidy-induced lysosomal/TFEB stress state"},
+        {"pmid": "22540912", "supports": "pediatric metformin trial (TODAY)"},
+        {"pmid": "26900641", "supports": "long-term B12 deficiency risk"},
+        {"pmid": "20947488", "supports": "cancer-incidence meta-analysis in metformin users"},
+        {"label": "openFDA: metformin hydrochloride tablets, sections 1 and 8.4", "supports": "pediatric 10-16y labeling and boxed warning"},
+    ],
+})
+
+C.append({
+    "id": "C5-rapalogs",
+    "axis": "protect",
+    "class": "mTOR inhibition",
+    "agents": ["sirolimus", "everolimus", "temsirolimus"],
+    "chembl": {k: chembl(k) for k in ("sirolimus", "everolimus", "temsirolimus")},
+    "mechanism_tie": "wrong-direction for aneuploidy selectivity",
+    "mechanism_note": "mTOR inhibition relieves translation burden and induces autophagy. Aneuploid cells are protein-synthesis-stressed and autophagy-limited (Santaguida 2015), so mTOR inhibition is expected to relieve exactly the bottleneck that disadvantages aneuploid cells, improving their survival fitness rather than reducing it. The pediatric TSC program (everolimus, EXIST-1) shows the class can be given to young children, but that experience concerns tolerance, not prevention of aneuploidy-driven tumors.",
+    "blocking_facts": [
+        "Sirolimus carries a boxed warning: immunosuppression increases susceptibility to infection and development of lymphoma and other malignancies (openFDA label) - the specific harm an MVA patient can least tolerate, since residual immune surveillance may clear aneuploid clones (Santaguida 2017, PMID 28633018, shows p53/intrinsic clearance of these cells).",
+        "Pediatric sirolimus labeling holds only for renal-transplant use at age >= 13y; everolimus SEGA labeling starts at 1y (EXIST-1), an oncology-tolerance precedent rather than prevention data.",
+    ],
+    "preclinical_evidence": "direct-animal (tolerance), none for the aneuploidy-prevention claim",
+    "regulatory": "approved-current",
+    "pediatric_experience": "labeled (sirolimus >=13y transplant; everolimus >=1y TSC-SEGA)",
+    "spectrum_fit": "none",
+    "verdict": "rejected",
+    "verdict_reason": "Mechanism points the wrong way on aneuploid-cell fitness, and the class's own label warns of malignancy from immunosuppression in the highest-surveillance-need population.",
+    "citations": [
+        {"pmid": "26404941", "supports": "aneuploid cells are autophagy/lysosome-limited"},
+        {"pmid": "28633018", "supports": "elimination of mis-segregated cells by p53-dependent surveillance"},
+        {"pmid": "21047224", "supports": "everolimus pediatric TSC-SEGA efficacy/tolerance"},
+        {"label": "openFDA: sirolimus, boxed warning and section 8.4", "supports": "malignancy-from-immunosuppression warning and >=13y labeling"},
+    ],
+})
+
+C.append({
+    "id": "C6-checkpoint-kinase-inhibitors",
+    "axis": "protection, opposite direction",
+    "class": "checkpoint-adjacent kinase inhibition (Mps1/TTK, Aurora B)",
+    "agents": ["CFI-402257", "BAY 1217389", "barasertib", "reversine (research only)"],
+    "chembl": {"barasertib": chembl("barasertib"), "reversine": chembl("reversine")},
+    "mechanism_tie": "wrong-direction",
+    "mechanism_note": "These drugs remove residual checkpoint signaling. In an MVA background that is already hypomorphic for a checkpoint protein, checkpoint inhibition raises chromosome mis-segregation: checkpoint blockade causes massive chromosome loss (Kops 2004). The only defensible use is against established, highly aneuploid tumors, where checkpoint inhibition is exploitative (Cohen-Sharir 2021) - a treatment setting, not prevention, and a population this patient does not yet belong to. Mps1 inhibitors remain investigational (Mason 2017); none is approved.",
+    "preclinical_evidence": "direct-animal, as harm",
+    "regulatory": "none approved",
+    "pediatric_experience": "none",
+    "spectrum_fit": "none for prevention; theoretical for treatment of any future tumor",
+    "verdict": "rejected",
+    "verdict_reason": "Documented wrong-direction candidates; listing them explicitly marks the boundary of the repurposing space.",
+    "citations": [
+        {"pmid": "15159543", "supports": "checkpoint inhibition causes massive chromosome loss"},
+        {"pmid": "33505028", "supports": "aneuploid cancer cells vulnerable to checkpoint inhibition (treatment-only setting)"},
+        {"pmid": "28270606", "supports": "Mps1 inhibitor CFI-402257 remains investigational (trial-stage)"},
+    ],
+})
+
+C.append({
+    "id": "C7-aspirin",
+    "axis": "protect",
+    "class": "cancer chemoprevention in a hereditary instability syndrome (NSAID)",
+    "agent": "aspirin",
+    "chembl": chembl("aspirin"),
+    "mechanism_tie": "weak-for-MVA (CIN-spectrum precedent only)",
+    "mechanism_note": "CAPP2 randomized 600 mg daily aspirin in Lynch syndrome and showed reduced colorectal cancer incidence at >=2 years of use (Burn 2011, Burn 2020). This is the strongest randomized chemoprevention evidence in any hereditary cancer-instability syndrome, but Lynch is mismatch-repair-driven, not chromosome-instable, and the benefit accrued in adults.",
+    "blocking_facts": [
+        "Pediatric contraindication class-wide: aspirin is not given to children/teenagers because of Reye's syndrome risk (standard US label language), and the MVA risk window is childhood.",
+    ],
+    "preclinical_evidence": "direct-human-trial-positive in a different syndrome, adult-only",
+    "regulatory": "approved-current (OTC)",
+    "pediatric_experience": "labeled against",
+    "spectrum_fit": "none for MVA tumors (RMS/leukemia/Wilms, not colorectal)",
+    "verdict": "rejected",
+    "verdict_reason": "Only syndrome-precedent value. Pediatric safety and spectrum mismatch rule it out.",
+    "citations": [
+        {"pmid": "22036019", "supports": "CAPP2 first long-term aspirin report"},
+        {"pmid": "32534647", "supports": "CAPP2 10-year follow-up, primary endpoint"},
+    ],
+})
+
+C.append({
+    "id": "C8-proteostasis-pressure",
+    "axis": "protect",
+    "class": "proteotoxic-stress amplification (Hsp90 inhibitors, proteasome inhibitors)",
+    "agents": ["17-AAG/tanespimycin (investigational)", "bortezomib"],
+    "chembl": {"bortezomib": chembl("bortezomib")},
+    "mechanism_tie": "moderate",
+    "mechanism_note": "Aneuploid human cells are HSF1/Hsp90-dependent (Donnelly 2014), and Hsp90 inhibition plus energy stress was aneuploidy-selective in Tang 2011. However no aneuploidy-selective Hsp90 inhibitor is approved; approved proteasome inhibition (bortezomib) is an oncology agent intolerable as prophylaxis in a child.",
+    "preclinical_evidence": "direct-human-cells",
+    "regulatory": "approved-current for bortezomib (oncology); Hsp90 inhibitors none",
+    "pediatric_experience": "studied (bortezomib in pediatric ALL), prophylaxis-incompatible",
+    "spectrum_fit": "indirect",
+    "verdict": "rejected",
+    "verdict_reason": "Cannot be given as long-term prophylaxis to a child; retained only as preclinical confirmation that the aneuploidy-proteostasis axis is druggable.",
+    "citations": [
+        {"pmid": "25205676", "supports": "HSP90/HSF1 dependence of aneuploid human cells"},
+        {"pmid": "21315436", "supports": "17-AAG in the aneuploidy-selective screen"},
+    ],
+})
+
+C.append({
+    "id": "C9-surveillance",
+    "axis": "comparator (standard of care)",
+    "class": "tumor surveillance plus symptom-directed management",
+    "mechanism_tie": "n/a",
+    "mechanism_note": "No syndrome-specific surveillance guideline exists for MVA1. Practice follows the childhood cancer predisposition frameworks (Kratz 2017) and the MVA tumor spectrum: Wilms tumor, embryonal rhabdomyosarcoma, leukemias/lymphomas (Hanks 2004; García-Castillo 2008; case series). Surveillance is what any candidate must beat on a risk-adjusted basis.",
+    "preclinical_evidence": "n/a",
+    "regulatory": "n/a",
+    "pediatric_experience": "n/a",
+    "spectrum_fit": "direct",
+    "verdict": "comparator",
+    "citations": [
+        {"pmid": "28168833", "supports": "childhood cancer predisposition screening recommendations framework"},
+        {"pmid": "15475955", "supports": "MVA1 description and tumor spectrum"},
+        {"pmid": "18548531", "supports": "MVA clinical heterogeneity delineation"},
+        {"pmid": "9916837", "supports": "MVA plus embryonal rhabdomyosarcoma case matching this proband"},
+        {"pmid": "28553959", "supports": "TRIP13 MVA2 Wilms predisposition for spectrum context"},
+    ],
+})
+
+RESULTS.joinpath("candidate_grades.json").write_text(json.dumps(C, indent=2) + "\n")
+
+# ---------------------------------------------------------------- markdown ---
+lines = ["# Track 2 candidate screen, graded", "",
+         "Q1 restore axis, Q2 protect axis, plus explicit wrong-direction rejections and the surveillance comparator.",
+         "Grades, mechanism_tie / preclinical_evidence / regulatory / pediatric_experience / spectrum_fit.",
+         ""]
+for c in C:
+    lines.append(f"## {c['id']}, {c.get('class','')}")
+    lines.append(f"- verdict: **{c['verdict']}**")
+    if c.get("verdict_reason"):
+        lines.append(f"- reason: {c['verdict_reason']}")
+    if c.get("agent"):
+        lines.append(f"- agent: {c['agent']}")
+    if c.get("agents"):
+        lines.append(f"- agents: {', '.join(c['agents'])}")
+    lines.append(f"- mechanism tie: {c['mechanism_tie']}. evidence: {c['preclinical_evidence']}. regulatory: {c['regulatory']}. pediatric: {c['pediatric_experience']}. spectrum: {c['spectrum_fit']}")
+    lines.append(f"- note: {c['mechanism_note']}")
+    for f in c.get("blocking_facts", []):
+        lines.append(f"  - blocker: {f}")
+    for f in c.get("supporting_facts", []):
+        lines.append(f"  - support: {f}")
+    lines.append("- citations: " + "; ".join(x.get("pmid", x.get("url", x.get("label", ""))) + " -- " + x["supports"] for x in c["citations"]))
+    lines.append("")
+RESULTS.joinpath("candidate_grades.md").write_text("\n".join(lines) + "\n")
+print("OK wrote candidate_grades.json/.md, entries:", len(C))
