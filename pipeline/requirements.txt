@@ -1,0 +1,23 @@
+# MVA Track 1 pipeline requirements (public PyPI + public GitHub only).
+#
+# Core steps 1-3 and 5 (download/QC, candidate mining, combine + rank,
+# submission writer, report figures). Pure CPU.
+pandas==3.0.5
+numpy==2.3.5
+pyarrow==25.0.1
+plotly==6.8.0
+
+# GPN-MSA lane (step 4, needs one GPU and a CUDA build of torch).
+# Install torch first from the pytorch index matching your CUDA, then:
+#   pip install "git+https://github.com/songlab-cal/gpn.git@690557d949309cf4f4234554888bb5421c49aede"
+#   pip install transformers==5.15.0 safetensors==0.8.0 jaxtyping==0.3.11 cyclopts "zarr<3"
+# The lane reuses pandas and pyarrow from the core list above.
+
+# EVEE lane (external, needs one GPU). Run with Goodfire's public repository
+# github.com/goodfire-ai/evee-manuscript at commit
+# e5e4a43d60bb217819144c09ab509ed44f49cd5f. See the README for the exact
+# reproduction parameters. Its dependencies come from that repository.
+
+# System tools (not pip). curl, git, tabix + bgzip from htslib, gzip, perl,
+# and Ensembl VEP release 112, for example the public container image
+# ensemblorg/ensembl-vep:release_112.0.
