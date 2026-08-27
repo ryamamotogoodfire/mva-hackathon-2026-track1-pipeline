@@ -1,0 +1,10 @@
+{
+ "note": "see artifact rasp_production/rasp_focal.json for full scan",
+ "N1002K_ddg_kcal_mol": 2.414196395170317,
+ "L1012P_ddg_kcal_mol": 8.695674114965325,
+ "I909T_ddg_kcal_mol": 3.2802346203273185,
+ "selfsubst_mean": 0.38917560135334317,
+ "selfsubst_sd": 0.5830754845910638,
+ "n_variants": 21000,
+ "method": "RaSP (Blaabjerg et al., eLife 2023), AF-O60566-F1-model_v6.pdb, 10-model ensemble"
+}

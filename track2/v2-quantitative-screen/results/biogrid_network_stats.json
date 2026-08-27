@@ -1,0 +1,10 @@
+{
+ "source": "BIOGRID-ORGANISM-4.4.236.tab3.zip",
+ "n_raw_rows": 901549,
+ "n_edges_lcc": 849005,
+ "n_nodes_lcc": 19908,
+ "n_components": 1,
+ "lcc_share": 1.0,
+ "degree_mean": 85.29,
+ "degree_max": 4833
+}

@@ -1,0 +1,31 @@
+{
+ "space": "CPD-int-GEN-ass-DIS (disgenet_curated+inferred)",
+ "n_metapath_edges": 458265,
+ "rank_auc_edges_vs_random": 0.9172829408748213,
+ "mean_sim_edges": 0.36321239010943274,
+ "mean_sim_random": 0.1208894699044219,
+ "pass": true,
+ "mva1_direct_compound_edges": [
+  "GKDRMWXFWHEQQT-UHFFFAOYSA-N",
+  "KGPGFQWBCSZGEL-UHFFFAOYSA-N"
+ ],
+ "mva1_direct_compound_edges_decoded": {
+  "GKDRMWXFWHEQQT-UHFFFAOYSA-N": "fostamatinib (approved SYK inhibitor)",
+  "KGPGFQWBCSZGEL-UHFFFAOYSA-N": "GSK-3203591-class imidazopyridine (research compound)"
+ },
+ "anchor_pairs": {
+  "methotrexate-rheumatoid_arthritis": {
+   "cosine": 0.3528020372965666,
+   "percentile": 96.78982434887948,
+   "match_tier": "exact"
+  },
+  "simvastatin-hypercholesterolemia": {
+   "cosine": 0.06530671365542251,
+   "percentile": 14.556834241873617,
+   "match_tier": "exact"
+  },
+  "warfarin-thrombosis": {
+   "note": "absent: drug_mapped=False dis=False"
+  }
+ }
+}

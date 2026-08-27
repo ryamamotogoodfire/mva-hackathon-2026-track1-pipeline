@@ -1,0 +1,23 @@
+{
+ "ivacaftor_vs_CFCmodule(CFTR-only)": {
+  "p_obs": 0.0,
+  "z": -3.413574826940476,
+  "mu_null": 1.67,
+  "sd_null": 0.48922319991936136,
+  "pass": true
+ },
+ "imatinib_vs_cml_module(BCR-ABL1)": {
+  "p_obs": 0.5,
+  "z": -10.655880390975772,
+  "mu_null": 1.941,
+  "sd_null": 0.13523049688323743,
+  "pass": true
+ },
+ "simvastatin_vs_MVA_module": {
+  "p_obs": 2.0,
+  "z": 0.37083523474861174,
+  "mu_null": 1.879,
+  "sd_null": 0.32629046180583565,
+  "pass": true
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "n_drugs": 1811,
+ "n_with_prox_z": 1792,
+ "n_with_kg": 584,
+ "n_with_l1000": 587,
+ "l1000_background_frac_tau_lt_-30": 0.07044197547723792,
+ "n_openfda_found": 1151,
+ "n_pediatric_section": 962
+}

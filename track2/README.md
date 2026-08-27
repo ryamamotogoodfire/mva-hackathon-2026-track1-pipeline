@@ -26,3 +26,16 @@ From this directory, with a Python 3.11+ environment that has only the standard 
 - The missense allele p.Asn1002Lys is a last-exon change inside the pseudokinase domain and escapes decay, class-consistent with instability-driven abundance loss.
 - No approved medication restores BUBR1 from these alleles. Metformin is proposed as a secondary-prevention hypothesis. Amlexanox is named at bench grade only.
 - Recorded rejections with reasons, ataluren, aminoglycosides, sirolimus and everolimus, checkpoint kinase inhibitors, aspirin, bortezomib and Hsp90 inhibitors.
+
+
+## Track 2 v2 (2026-08 follow-on)
+
+The quantitative re-grade of this candidate list lives in [v2-quantitative-screen/](v2-quantitative-screen/) and in the v2 deliverables below. Headlines: no approved medication restores BUBR1 (unchanged); the hydroxychloroquine/chloroquine class is promoted above metformin as the secondary-prevention hypothesis (Tang 2011 aneuploidy-selective evidence + established pediatric malaria label); NMN is the best biological but status-blocked route to raise BUBR1 (North 2014, EMBO J, PMID 24825348); every verdict update is recorded with its reason in [v2-quantitative-screen/results/candidate_grades_v2.md](v2-quantitative-screen/results/candidate_grades_v2.md).
+
+
+## Track 2 v2 deliverables (2026-08-27)
+
+- [Silico-EVEE_track2_report_v2.md](Silico-EVEE_track2_report_v2.md) supersedes the v1 report: same verified mechanism chain, candidate grading rebuilt on the quantitative full-FDA screen, all verdict updates with reasons, revised falsifiable statements, and the v2 answers to the official methods form.
+- [Silico-EVEE_track2_methods_description_form_v2.xlsx](Silico-EVEE_track2_methods_description_form_v2.xlsx) is the official methods form, Track 2 sheet, with every answer revised to v2 (sha256 f0507f523860e5b58553efe8432b8ee17d1c60865030ffe476fef5e6bbb65b3e, recorded in the experiment's verification note).
+- [Silico-EVEE_track2_pitch_video_outline_v2.md](Silico-EVEE_track2_pitch_video_outline_v2.md) is the refreshed three-minute pitch outline.
+- [v2-quantitative-screen/](v2-quantitative-screen/) holds the screen README plus every graded writeup and table the report cites.
