@@ -1,0 +1,49 @@
+{
+ "headline": "Quantitative screen across 1,811 approved drugs: no approved medication restores BUBR1 from this pair; hydroxychloroquine class gets promoted above metformin as the secondary-prevention hypothesis, and NMN is graded the best biological (status-blocked) route to raise BUBR1.",
+ "assessment": "success-with-instrument-limits",
+ "decision_rule": "A candidate promotes only if it carries the strongest direct published evidence for its rescue direction under pediatric safety feasibility, per the field standards cited in the plan (Barabasi insurance-record validation, FDA ivacaftor in-vitro-expansion precedent). Screen scores alone cannot promote; the field's documented failure mode (topiramate-IBD) is the cautionary template.",
+ "methods": {
+  "screen_lane_1_network_proximity": "Guney/Barabasi closest-distance z-score over BioGRID 4.4.236 human physical PPI (19,908 proteins, 849,005 edges), 1,000 degree-matched null sets per drug, declared MVA module BUB1B/BUB1/CEP57/TRIP13/MAD1L1/MAD2L1/BUB3/TTK/CDC20/CENPE/AURKB/PLK1. Calibration: ivacaftor vs CFTR module z=-3.41; imatinib vs BCR-ABL1 module z=-10.66; simvastatin vs MVA module z=+0.37.",
+  "screen_lane_2_knowledge_graph": "Bioteque CPD-int-GEN-ass-DIS disgenet_curated+inferred bundle (4,954 compounds x 3,836 Disease Ontology terms, MVA1=DOID:0080141 present). Score: cosine similarity to the MVA1 embedding, percentile within the bundle. Calibration: bundle recovers its own KG metapath edges, rank AUC 0.917; methotrexate at percentile 96.8 for its true-indication node RA.",
+  "screen_lane_3_signature_reversal": "LINCS Phase I (GEO GSE92742) Level5 MODZ; BUB1B-low proxy = mean of 58 knockdown-gated (own z<=-1) trt_sh signatures; query = 150 up/150 down sign-consistent genes; tau-style weighted connectivity per Subramanian 2017; 205,034 compound signatures scored. Validations: own knockdown readout BUB1B z=-2.95 (pass), published pair MTOR-sirolimus cs=+19.1 mean (pass), held-out-hairpin reconnect cs=0.101 vs random p95=0.184 (fail: instrument-limited lane).",
+  "allele_tickets": "NMD margin recomputed from live Ensembl (PTC at CDS 2209, last junction 2957, 748 nt, six downstream junctions, exon 17/23). Stability: RaSP (Blaabjerg et al. eLife 2023) on AF-O60566-F1-model_v6, 10-ensemble: N1002K ddG +2.41 kcal/mol; adjacent validated instability alleles L1012P +8.70, I909T +3.28; identity substitutions +0.21 +/- 0.58 kcal/mol. Ligandability: fpocket 4.2.3, 97 pockets, max druggability 0.169, max in pseudokinase 0.111, none at N1002/L1012.",
+  "drug_target_table": "ChEMBL ChEMBL_37 mechanism.json (max_phase=4, direct interaction): 3,812 mechanisms, 3,023 molecules, 1,811 drugs with human protein targets (650 genes), all five known-pair spot checks pass; openFDA label enrichment for 1,151 drugs, 962 with pediatric sections.",
+  "grading": "Per-ingredient aggregation over ChEMBL salt forms; verdicts applied under the rule; Track 2 candidate list updated with reasons; openFDA label snapshots for pediatric/approval status."
+ },
+ "results": {
+  "q1_answer": "No approved medication is promoted by the three orthogonal screen lanes over the named rescue directions. The strongest screen output is fostamatinib (Bioteque percentile 99.8, only approved compound with a direct metapath edge to DOID:0080141), rejected under the rule for having no published evidence in any rescue direction and no pediatric approval. No ingredient ranks in the top 100 of all three lanes.",
+  "q2_answer": "Track 2 v2 promotes the chloroquine/hydroxychloroquine class above metformin as the secondary-prevention hypothesis: chloroquine carries Tang 2011's aneuploidy-selective vulnerability data (strongest published class), and hydroxychloroquine's FDA label establishes pediatric safety/effectiveness for malaria. Metformin demoted: its Tang 2011 evidence is weak and subordinate to AICAR, with no dedicated replication; pediatric safety record keeps it as protection fallback. NMN is graded the best biological candidate (in-vivo BubR1-raising evidence via NAD+/SIRT2, North 2014) and status-blocked (not an approved medication). Amlexanox stays bench-only: verifiable order-of-magnitude exposure-versus-potency gap; L1000 shows zero reversal connectivity for it.",
+  "prior_pick_updates": {
+   "metformin": "demoted (weak published aneuploidy-selectivity; kept as protection fallback)",
+   "amlexanox": "unchanged fallback-research (bench-only, exposure gap)",
+   "ataluren": "unchanged rejected (EU authorization ended 2025-03-28)",
+   "aminoglycosides": "unchanged rejected",
+   "rapalogs_sirolimus": "unchanged rejected",
+   "aspirin": "unchanged rejected",
+   "proteostasis_inhibitors": "unchanged rejected, HSP90 direction-conflict formalized via the mutant-BUBR1 HSP90-client mechanism"
+  },
+  "structural": "N1002K = +2.41 kcal/mol (RaSP), a moderate destabilization below the extreme L1012P (+8.70) anchor, same class as the validated instability allele I909T (+3.28). No druggable pocket at the missense locus: chaperone rescue cannot be matched to a pocket-based precedent.",
+  "nmd": "Stop-gain transcript is a hard NMD substrate (748 nt, six junctions), codon context TGA-A."
+ },
+ "limitations": [
+  "The LINCS Phase I BUB1B knockdown signatures do not cohere across hairpins (held-out reconnect cs=0.101 vs null p95 0.184); the reversal lane is instrument-limited and contributes only weak evidence.",
+  "The Bioteque MVA1 disease node rests on DisGeNET-inferred associations, which lean toward cancer-gene links for checkpoint genes; KG proximity for MVA1 is thin evidence and treated as such.",
+  "The pseudokinase ddG estimate comes from RaSP, substituted for the license-blocked FoldX (pre-registered); identity-substitution band is wide (max 3.92 kcal/mol), so values within ~2 kcal/mol are reads, not measurements.",
+  "Screen coverage is partial: 584 of 1,811 drugs entered the Bioteque space; 587 entered the L1000 collapse; several molecules exist only as ChEMBL salt forms with no mechanism record.",
+  "The hydroxychloroquine-class evidence is cell-culture aneuploidy selectivity (Tang 2011), not in-vivo or MVA-specific; promotion is a prophylaxis hypothesis, off-label for MVA."
+ ],
+ "supporting_artifacts": {
+  "drug_target_genes": "results/drug_target_genes.parquet",
+  "proximity_scores": "results/proximity_scores.parquet",
+  "bioteque_scores": "results/bioteque_scores.parquet",
+  "bioteque_calibration": "results/bioteque_calibration.json",
+  "reversal_tau": "results/l1000/reversal_tau.parquet (cluster: allele/tickets dir mirrors in results/)",
+  "sheet_joined": "results/screen_joined.parquet",
+  "screen_ingredient": "results/screen_ingredient.parquet",
+  "candidate_grades_v2": "results/candidate_grades_v2.json + results/candidate_grades_v2.md",
+  "nmd_ticket": "results/nmd_ticket.json",
+  "rasp_variants": "cluster: allele_tickets/rasp_production/rasp_bubr1_variants.csv",
+  "fpocket_summary": "results/fpocket_summary.json",
+  "openfda_snapshots": "results/openfda_candidate_label_snapshots.json, results/openfda_pediatric.parquet"
+ }
+}

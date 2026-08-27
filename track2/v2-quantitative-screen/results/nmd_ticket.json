@@ -1,0 +1,27 @@
+{
+ "transcript": "ENST00000287598",
+ "refseq": "NM_001211.6",
+ "ptc_codon_start_cds": 2209,
+ "cdna_variant_position": 2210,
+ "cds_length_nt": 3153,
+ "last_exon_junction_cds": 2957,
+ "distance_nt": 748,
+ "nmd_predicted": true,
+ "margin_vs_50nt": 698,
+ "downstream_exon_junctions": 6,
+ "ptc_exon_rank": 17,
+ "n_cds_blocks": 23,
+ "source": "Ensembl REST lookup/id/ENST00000287598?expand=1 (live, 2026-08-27)",
+ "method": "terminal-exon 50-nt rule over rank-ordered CDS blocks",
+ "downstream_junction_positions_cds": [
+  2284,
+  2385,
+  2535,
+  2678,
+  2850,
+  2957
+ ],
+ "matches_track2_allele_map_distance_748_nt": true,
+ "matches_track2_junctions_6": true,
+ "codon_context_TGA": "UGA-A (TGAA) permissive readthrough context, verified in Track 2 allele map"
+}
