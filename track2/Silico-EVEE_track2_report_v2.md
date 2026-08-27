@@ -102,6 +102,31 @@ Metformin's v1 primary rank rested on pediatric safety plus an indirect mechanis
 
 North 2014 (PMID 24825348) is the only published route that increases BubR1 abundance in vivo. In that work NMN given to young and aged wild-type mice raised BubR1 protein by boosting NAD+ and thereby reducing SIRT2-mediated deacetylation of BubR1; the paper's BubR1-hypomorphic cohorts tested SIRT2 overexpression, which is where the disease-model evidence lives. Regulatory status: FDA's 2022 drug-preclusion determination had excluded NMN from the dietary-supplement definition, but FDA reversed that exclusion on 2025-09-29 in its response to citizen petition FDA-2023-P-0872, so NMN is a lawful dietary supplement. A lawful supplement is not an FDA-approved medication, so NMN cannot enter the proposal table. Nicotinamide is rejected as a separate candidate: at relevant concentrations it inhibits SIRT2, the arc's effector, which flips the direction.
 
+### Approved NAD+ precursors, and the coverage gap that hid them
+
+The dosage-raise direction deserved a second look, because niacin is an FDA-approved drug and an NAD+ precursor, which makes it the approved-medication analog of the NMN route. Checking why it never appeared in the screen exposed a real limitation of the drug universe.
+
+The screen's universe is target-annotated pharmacology. Nutrient-class agents that act as metabolic substrates rather than through a protein target carry no mechanism annotation, so the entire NAD+ precursor class was invisible to all three lanes. Their absence from the screen is a coverage gap, not a negative result, and it falls on exactly the class the North 2014 mechanism implicates.
+
+- NIACIN (CHEMBL573, max_phase 4, first approval 1982): 0 mechanism records in ChEMBL 37, so no target to place in the network, the knowledge graph, or the target-based joins.
+- NIACINAMIDE / nicotinamide (CHEMBL1140, max_phase 4): 0 mechanism records.
+- ACIPIMOX (CHEMBL345714, max_phase 4): 1 mechanism record whose target_chembl_id is null and whose action_type is null with mechanism_of_action 'Unknown'. It survives into the approved-molecule table but is dropped by the join to a human protein target, so it never receives a lane score.
+- NICOTINAMIDE RIBOSIDE (CHEMBL438497): max_phase 3, not an approved medication, and 0 mechanism records.
+- NICOTINYL ALCOHOL (CHEMBL1235535): max_phase -1.
+
+Graded against the North 2014 mechanism, on approval status, pediatric record, and mechanism tie:
+
+| Agent | Approval | Pediatric record | Mechanism tie to raising BUBR1 | Verdict |
+| --- | --- | --- | --- | --- |
+| niacin (nicotinic acid) | FDA prescription (NIACOR ANDA040378 immediate-release; multiple extended-release ANDAs), for dyslipidemia | not established (IR: children and adolescents; ER: 16 years and under) | genuine but indirect NAD+ precursor; no BubR1, aneuploidy, or MVA data | rejected for this case, class analog recorded |
+| nicotinamide | vitamin or unapproved-listing product, not an FDA-approved therapeutic drug | none | direction-conflict: inhibits SIRT2, the effector the BubR1 increase is attributed to | rejected, direction-conflict |
+| acipimox | no FDA approval (no openFDA label or application); non-US approvals only | none | weak: HCAR2 lipolysis agent, not an efficient NAD+ precursor | rejected |
+| nicotinamide riboside | dietary supplement, ChEMBL max_phase 3 | none | same salvage route as NMN, no BubR1 data | status-blocked |
+| NMN | lawful dietary supplement since FDA's 2025-09-29 reversal; not an approved medication | none | only published in-vivo BubR1 abundance increase (wild-type mice) | status-blocked, best biological |
+
+The dosage-raise direction now has an approved-medication member, niacin, so the honest v2 statement changes from 'no approved drug exists on this axis' to 'an approved NAD+ precursor exists and still fails the promotion rule'. Nothing on this axis is promoted: the only BubR1-abundance evidence in the class belongs to a different molecule (NMN) in wild-type mice from a single paper, niacin has no BubR1 or aneuploidy data plus an explicit 'pediatric safety not established' label and a documented adult harm profile at pharmacologic doses, and nicotinamide points the wrong way on SIRT2. The class earns a named bench test rather than a proposal: measure BUBR1 protein in proband fibroblasts under an NAD+ precursor before anyone discusses dosing a child.
+
+One correction to the v2 framing follows from this. The dosage-raise axis is not empty of approved medicines, and the report now says so. Niacin's rejection rests on evidence and pediatric labeling, not on absence: Niacin is the approved-medication analog of the NMN route and it changes the NMN verdict's shape: the dosage-raise direction is not empty of approved drugs after all. It still fails the promotion rule. The direction evidence is one paper in wild-type mice using a different molecule (NMN), niacin itself has no BubR1 or aneuploidy data, and its pediatric record is an explicit 'not established' with a known adult harm profile at pharmacologic doses. Naming it as a proposal would be mechanism-by-analogy, which is the failure mode the pre-declared rule exists to block.
 ### Why amlexanox is unchanged at bench grade
 
 Its dual mechanism (NMD inhibition plus readthrough promotion, Salvatori 2012, PMID 22938201; Atanasova 2017, PMID 28549954) remains the only restore-class route that addresses both blockers of this exact allele. The v2 quantitative lanes confirm the verdict rather than promoting anything: amlexanox carries no reversal-direction connectivity in any of its 11 LINCS Phase I signatures (five rows show positive tau up to +35.6 in A549 at 24 h, the rest sit at the lane's null 0), and its exposure-versus-potency gap stays the documented ~10x fold (RDEB dosing serum around 5 microM versus an in-vitro floor of 50 microM). Bench proof-of-mechanism on the child's own cells, falsifiable in weeks.
@@ -118,6 +143,27 @@ mTOR inhibition (wrong direction and class warning), checkpoint-kinase inhibitio
 
 No MVA-specific surveillance guideline exists, MVA-adapted childhood cancer predisposition frameworks govern (Kratz 2017, PMID 28168833), and any proposal must beat surveillance on a risk-adjusted basis.
 
+### Can any approved small molecule stabilize the pseudokinase domain?
+
+fpocket said the mutation site has no druggable pocket, and a pharmacological chaperone does not have to bind at the mutation: tafamidis stabilizes transthyretin at the dimer interface, far from most destabilizing substitutions. So the v2 work asked the harder question with a bounded computation.
+
+**The site annotation is cross-species.** The two published structures for this domain, 6JKK and 6JKM, are *Drosophila* BubR1 kinase domain (UniProt A1Z6I7), not human. 6JKM carries ADP plus two magnesium ions, and its 14 contact residues map onto human BUB1B 774, 781, 793, 795, 840, 841, 842, 843, 886, 887, 889, 910, 911. The mapping is anchored independently: the fly catalytic lysine lands on human K795, the residue mutated in the standard BUBR1 kinase-dead K795R construct, and the fly HRD aspartate lands on human R886, matching the documented pseudokinase degeneracy. Only 4 of 13 contacts are identical between the species, so away from that anchor the annotation is approximate.
+
+**Does the nucleotide site itself still bind a nucleotide?** Experimentally, the fly ortholog's pseudokinase domain does: 6JKM is an ADP + Mg complex at 1.95 angstrom. Computationally the picture is weak on both sides. Redocking ADP into its own crystal put the top-scored pose 6.03 angstrom from the experimental pose, with the closest of 9 poses at 3.37 angstrom ranked by score below three worse ones; the usual success bar is 2 angstrom. Docked into the human model, ADP scores -7.26 and ATP -6.73 kcal/mol, which is unremarkable. The honest reading is that this docking setup has no pose accuracy for a charged, flexible nucleotide in this site (magnesium was not modeled), so it cannot settle whether human BUBR1 binds ATP; the structural literature on the fly ortholog is the better evidence, and human BUBR1 is catalytically degenerate regardless.
+
+**Pocket prediction agrees with fpocket about the mutation site.** p2rank 2.4.2 with its AlphaFold-specific model ranks the nucleotide site first on the human model (score 8.86, probability 0.41, 5.40 angstrom from the mapped contacts, K795 among its residues). Its nearest pocket to N1002 is 25.05 angstrom away. Two independent pocket finders therefore agree: there is no pocket at the mutated residue. On the fly crystal the same predictor scores its nucleotide pocket 23.25 with probability 0.89, far more pocket-like than the human model's equivalent.
+
+**The screen.** 2240 ligands (approved small molecules 250 to 600 Da plus every named case candidate regardless of size, plus ADP and ATP as references) were docked with smina against three boxes on AF-O60566-F1: the nucleotide site, the two fpocket pockets that touch N1002, and fpocket pocket 21, the most druggable pocket overlapping the domain. Stage 1 screened everything at low exhaustiveness (35.5 CPU-hours in total); stage 2 re-docked the best 40 per box at exhaustiveness 16 and rescored with Vinardo.
+
+| Box | dist. to N1002 | RaSP burden of lining residues | best approved drug (Vina, exh 16) | ADP reference | ATP reference |
+| --- | --- | --- | --- | --- | --- |
+| nucleotide site | 30.69 A | 1.639 kcal/mol (1.932x protein mean) | DUTASTERIDE, -10.06 kcal/mol | -7.28 | -6.76 |
+| mutation site | 1.01 A | 1.87 kcal/mol (2.204x protein mean) | ZAFIRLUKAST, -8.56 kcal/mol | -6.43 | -6.39 |
+| pseudokinase best | 41.95 A | 1.194 kcal/mol (1.408x protein mean) | NILOTINIB HYDROCHLORIDE MONOHYDRATE, -8.47 kcal/mol | -6.70 | -5.94 |
+
+**How the molecules this case already cares about score.** None of the graded candidates is anywhere near the top: hydroxychloroquine sits at the 16th, 31st, and 75th percentile across the three boxes, tafamidis itself at the 67th to 79th, and the two NAD+ precursors near the bottom (acipimox 2nd to 8th, niacin 11th to 14th). Two checks cut against trusting the ranking's top. Migalastat, a clinically validated pharmacological chaperone, scores in the bottom 6 percent everywhere, while lumacaftor, the CFTR chaperone, is the only named chaperone-class molecule near the top in all three boxes (99.3rd to 99.9th percentile), so known chaperones land at both extremes of this ranking. And while ADP, the site's natural ligand, does land in the top quintile of the library (83rd percentile in its own pocket), 372 ordinary approved drugs still outscore it, so the top of this ranking is exactly the territory hundreds of decoys reach. A scoring function that places known chaperones at both extremes and crowds its natural ligand under hundreds of drug-sized decoys cannot nominate one.
+
+**The result is an honest negative.** No approved molecule separates itself from the pack in any box. The best scores sit in the range ordinary drug-sized molecules reach against any shallow protein surface, the natural nucleotide references land in the same range rather than below it, and the scoring function that produced these numbers already failed its own pose-recovery control in the crystal. Nothing here supports naming a stabilizer candidate. What the computation does support is a boundary statement: across the approved small-molecule space, the BUBR1 pseudokinase domain offers no pocket at the mutation, no pocket with convincing predicted ligandability (fpocket druggability at most 0.169 anywhere, 0.111 inside the domain; p2rank probability 0.41 at best), and no molecule whose predicted binding stands out from background. A tafamidis-style route for this allele would need a new binding site discovered experimentally, not a repurposing hit.
 ## Verdict updates from v1 to v2
 
 | Candidate | v1 verdict | v2 verdict | Reason |
@@ -125,7 +171,10 @@ No MVA-specific surveillance guideline exists, MVA-adapted childhood cancer pred
 | metformin | primary | demoted, protection fallback | aneuploidy-selectivity evidence incidental, weaker than the chloroquine signal in the same 2011 study, unreplicated |
 | hydroxychloroquine class | not graded | promoted, primary secondary-prevention hypothesis | strongest published aneuploidy-selective route for this direction plus established pediatric malaria label (>=31 kg tablet caveat; chloroquine liquid below) |
 | NMN | not graded | best biological, status-blocked | only in-vivo BubR1 raise (wild-type mice, North 2014); lawful supplement since the 2025-09-29 FDA reversal, not an FDA-approved medication |
+| niacin (nicotinic acid) | not graded | rejected for this case, class analog recorded | only FDA-approved NAD+ precursor; no BubR1 or aneuploidy data; pediatric safety and effectiveness not established on the label; chronic pharmacologic dosing carries a documented adult harm profile |
 | nicotinamide | not graded | rejected, direction-conflict | SIRT2 inhibition antagonizes the NAD+/SIRT2 axis |
+| acipimox | not graded | rejected | no FDA approval, weakest mechanism tie (HCAR2 lipolysis agent, not an efficient NAD+ precursor) |
+| nicotinamide riboside | not graded | status-blocked | supplement, no BubR1 data |
 | amlexanox | fallback-research | unchanged | dual NMD+readthrough mechanism; exposure gap ~10x; no reversal-direction connectivity on the LINCS lane |
 | ataluren, aminoglycosides, rapalogs, aspirin, proteostasis inhibitors, checkpoint kinase inhibitors | rejected | unchanged | v1 reasons stand; the HSP90 direction-conflict is now formalized at the allele level |
 | surveillance | comparator | unchanged | protective frame for unproven chemoprevention |
@@ -160,6 +209,8 @@ From v1, unchanged: Track 1's mechanical ranking crowned a homozygous 45-base PE
 - RaSP has a wide identity band (sd 0.58) and a roughly 2 kcal/mol practical resolution; class statements rest on within-protein comparisons to validated alleles.
 - Tang 2011 aneuploidy-selectivity evidence is cell culture. Hydroxychloroquine's pediatric record is its malaria label, not long-term prophylaxis in a chromosomal-instability child, and the film-coated label stops at 31 kg.
 - NMN evidence is one lab's in-vivo result from wild-type mice, with hypomorphic support from SIRT2 overexpression.
+- The screen's drug universe is target-annotated pharmacology, so nutrient-class agents with no ChEMBL mechanism target (the NAD+ precursors, among others) were never scored by any lane. They are graded separately in this report, and their absence from the lane tables is a coverage gap rather than a negative result.
+- The stabilizer docking screen is a weak instrument: its engine failed to reproduce the experimental ADP pose in the crystal that contains it (top pose 6.03 angstrom), the ATP-site annotation is mapped from a Drosophila structure with 4 of 13 contacts identical, magnesium was not modeled, and no rescoring or free-energy refinement was run. It supports the boundary statement that no approved molecule stands out, not any positive claim.
 - Mouse-derived dosage thresholds, reporter-graded readthrough contexts, and an inferred trans configuration carry over from v1.
 
 ## Track 2 methods description form, answered (v2)

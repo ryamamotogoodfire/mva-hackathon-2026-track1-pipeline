@@ -123,7 +123,7 @@ Track 2 asks whether an existing approved medication is a plausible candidate ag
 
 - [track2/Silico-EVEE_track2_report.md](track2/Silico-EVEE_track2_report.md) is the full Track 2 submission report, including the official methods-description answers.
 - [track2/README.md](track2/README.md) documents the chapter and its reproduction steps.
-- [track2/Silico-EVEE_track2_report_v2.md](track2/Silico-EVEE_track2_report_v2.md) (2026-08-27) is the v2 follow-on: a quantitative full-FDA screen re-grades the candidate list, promoting the chloroquine/hydroxychloroquine class above metformin, grading NMN as the best biological but status-blocked candidate, and keeping amlexanox bench-only.
+- [track2/Silico-EVEE_track2_report_v2.md](track2/Silico-EVEE_track2_report_v2.md) (2026-08-27) is the v2 follow-on: a quantitative full-FDA screen re-grades the candidate list, promoting the chloroquine/hydroxychloroquine class above metformin, grading NMN as the best biological but status-blocked candidate, and keeping amlexanox bench-only. Two later additions close the gaps the lane screen left: the approved NAD+ precursor class, invisible to the target-annotated screen for want of ChEMBL mechanism records, is graded separately (niacin is the approved analog and is still rejected for this case), and a bounded docking screen over the approved small-molecule space returns an honest negative for any tafamidis-style stabilizer of the pseudokinase domain. See [track2/v2-quantitative-screen/README.md](track2/v2-quantitative-screen/README.md).
 
 ## Acknowledgement
 

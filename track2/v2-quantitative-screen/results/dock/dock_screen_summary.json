@@ -1,0 +1,1172 @@
+{
+ "tools": {
+  "smina": "/tmp/dockwork/smina.static",
+  "smina_version": "Smina Oct 15 2019.  Based on AutoDock Vina 1.1.2.",
+  "p2rank": "/tmp/dockwork/p2rank_2.4.2/prank",
+  "java_bin": "/tmp/dockwork/jdk-21.0.12.1+1-jre/bin",
+  "java_version": "openjdk version \"21.0.12.1\" 2026-08-18 LTS"
+ },
+ "n_ligands_embedded": 2240,
+ "n_embed_failures": 6,
+ "embed_failures": [
+  "CHEMBL2368924",
+  "CHEMBL511142",
+  "CHEMBL2368861",
+  "CHEMBL3833382",
+  "CHEMBL2368925",
+  "CHEMBL3833388"
+ ],
+ "boxes": {
+  "nucleotide_site": {
+   "center": [
+    -18.587,
+    -9.415,
+    -1.449
+   ],
+   "size": [
+    20.0,
+    20.0,
+    20.0
+   ],
+   "residues": [
+    774,
+    781,
+    793,
+    795,
+    840,
+    841,
+    842,
+    843,
+    886,
+    887,
+    889,
+    910,
+    911
+   ],
+   "dist_center_to_N1002_A": 30.69,
+   "stability_burden": {
+    "available": true,
+    "n_residues_scored": 13,
+    "mean_ddg_pocket": 1.639,
+    "mean_ddg_protein": 0.848,
+    "burden_ratio": 1.932
+   }
+  },
+  "mutation_site": {
+   "center": [
+    -32.441,
+    -7.008,
+    26.377
+   ],
+   "size": [
+    20.0,
+    20.0,
+    20.0
+   ],
+   "residues": [
+    941,
+    944,
+    945,
+    950,
+    954,
+    973,
+    976,
+    977,
+    978,
+    995,
+    998,
+    999,
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1014,
+    1015,
+    1018
+   ],
+   "dist_center_to_N1002_A": 1.01,
+   "stability_burden": {
+    "available": true,
+    "n_residues_scored": 20,
+    "mean_ddg_pocket": 1.87,
+    "mean_ddg_protein": 0.848,
+    "burden_ratio": 2.204
+   }
+  },
+  "pseudokinase_best": {
+   "center": [
+    -17.51,
+    -8.774,
+    -13.203
+   ],
+   "size": [
+    20.0,
+    20.0,
+    20.0
+   ],
+   "residues": [
+    769,
+    770,
+    771,
+    772,
+    782,
+    784,
+    786,
+    787
+   ],
+   "dist_center_to_N1002_A": 41.95,
+   "stability_burden": {
+    "available": true,
+    "n_residues_scored": 8,
+    "mean_ddg_pocket": 1.194,
+    "mean_ddg_protein": 0.848,
+    "burden_ratio": 1.408
+   }
+  }
+ },
+ "ncpu": 32,
+ "seed": 42,
+ "stage1": {
+  "nucleotide_site": {
+   "n_scored": 2239,
+   "exhaustiveness": 2,
+   "seconds": 1444.8,
+   "cpu_seconds": 46232.4,
+   "affinity_min": -10.08,
+   "affinity_median": -6.47
+  },
+  "mutation_site": {
+   "n_scored": 2239,
+   "exhaustiveness": 2,
+   "seconds": 1246.2,
+   "cpu_seconds": 39878.9,
+   "affinity_min": -8.41,
+   "affinity_median": -5.87
+  },
+  "pseudokinase_best": {
+   "n_scored": 2239,
+   "exhaustiveness": 2,
+   "seconds": 1298.4,
+   "cpu_seconds": 41548.6,
+   "affinity_min": -8.42,
+   "affinity_median": -5.82
+  }
+ },
+ "stage2": {
+  "nucleotide_site": [
+   {
+    "molecule_chembl_id": "CHEMBL1200969",
+    "pref_name": "DUTASTERIDE",
+    "mw": 528.5,
+    "stage1_affinity": -10.08,
+    "vina_exh16": -10.06,
+    "vinardo_exh16": -8.68
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105755",
+    "pref_name": "NALDEMEDINE",
+    "mw": 570.6,
+    "stage1_affinity": -8.79,
+    "vina_exh16": -9.59,
+    "vinardo_exh16": -9.73
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989867",
+    "pref_name": "BICTEGRAVIR SODIUM",
+    "mw": 471.4,
+    "stage1_affinity": -9.36,
+    "vina_exh16": -9.51,
+    "vinardo_exh16": -9.13
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2103870",
+    "pref_name": "LUMACAFTOR",
+    "mw": 452.4,
+    "stage1_affinity": -9.26,
+    "vina_exh16": -9.29,
+    "vinardo_exh16": -9.5
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105737",
+    "pref_name": "SONIDEGIB",
+    "mw": 485.5,
+    "stage1_affinity": -9.1,
+    "vina_exh16": -9.11,
+    "vinardo_exh16": -9.55
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989866",
+    "pref_name": "BICTEGRAVIR",
+    "mw": 449.4,
+    "stage1_affinity": -8.5,
+    "vina_exh16": -9.1,
+    "vinardo_exh16": -8.91
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105711",
+    "pref_name": "TOFOGLIFLOZIN",
+    "mw": 404.5,
+    "stage1_affinity": -9.03,
+    "vina_exh16": -9.03,
+    "vinardo_exh16": -8.05
+   },
+   {
+    "molecule_chembl_id": "CHEMBL442",
+    "pref_name": "ERGOTAMINE",
+    "mw": 581.7,
+    "stage1_affinity": -8.33,
+    "vina_exh16": -9.02,
+    "vinardo_exh16": -7.06
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1471",
+    "pref_name": "APREPITANT",
+    "mw": 534.4,
+    "stage1_affinity": -8.93,
+    "vina_exh16": -8.94,
+    "vinardo_exh16": -9.08
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2110731",
+    "pref_name": "TOFOGLIFLOZIN ANHYDROUS",
+    "mw": 386.4,
+    "stage1_affinity": -8.94,
+    "vina_exh16": -8.84,
+    "vinardo_exh16": -8.04
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1117",
+    "pref_name": "IDARUBICIN",
+    "mw": 497.5,
+    "stage1_affinity": -8.43,
+    "vina_exh16": -8.78,
+    "vinardo_exh16": -7.38
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989937",
+    "pref_name": "CAPMATINIB HYDROCHLORIDE",
+    "mw": 503.4,
+    "stage1_affinity": -8.56,
+    "vina_exh16": -8.73,
+    "vinardo_exh16": -8.72
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2107826",
+    "pref_name": "VIBEGRON",
+    "mw": 444.5,
+    "stage1_affinity": -8.6,
+    "vina_exh16": -8.69,
+    "vinardo_exh16": -7.07
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1732",
+    "pref_name": "DIHYDROERGOTAMINE",
+    "mw": 583.7,
+    "stage1_affinity": -8.87,
+    "vina_exh16": -8.67,
+    "vinardo_exh16": -6.96
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4802130",
+    "pref_name": "BELUMOSUDIL MESYLATE",
+    "mw": 548.6,
+    "stage1_affinity": -8.52,
+    "vina_exh16": -8.64,
+    "vinardo_exh16": -8.84
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200976",
+    "pref_name": "IDARUBICIN HYDROCHLORIDE",
+    "mw": 534.0,
+    "stage1_affinity": -8.63,
+    "vina_exh16": -8.63,
+    "vinardo_exh16": -7.04
+   },
+   {
+    "molecule_chembl_id": "CHEMBL608533",
+    "pref_name": "MIDOSTAURIN",
+    "mw": 570.6,
+    "stage1_affinity": -8.62,
+    "vina_exh16": -8.62,
+    "vinardo_exh16": -6.5
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3813873",
+    "pref_name": "PEXIDARTINIB",
+    "mw": 417.8,
+    "stage1_affinity": -8.58,
+    "vina_exh16": -8.62,
+    "vinardo_exh16": -9.07
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1607480",
+    "pref_name": "OXYTETRACYCLINE HYDROCHLORIDE",
+    "mw": 496.9,
+    "stage1_affinity": -8.62,
+    "vina_exh16": -8.61,
+    "vinardo_exh16": -6.68
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1615372",
+    "pref_name": "LURASIDONE HYDROCHLORIDE",
+    "mw": 529.1,
+    "stage1_affinity": -8.29,
+    "vina_exh16": -8.61,
+    "vinardo_exh16": -7.65
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2048484",
+    "pref_name": "CANAGLIFLOZIN ANHYDROUS",
+    "mw": 444.5,
+    "stage1_affinity": -8.49,
+    "vina_exh16": -8.59,
+    "vinardo_exh16": -8.6
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3936761",
+    "pref_name": "ZANUBRUTINIB",
+    "mw": 471.6,
+    "stage1_affinity": -8.57,
+    "vina_exh16": -8.57,
+    "vinardo_exh16": -8.79
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989691",
+    "pref_name": "ELTROMBOPAG OLAMINE",
+    "mw": 564.6,
+    "stage1_affinity": -8.41,
+    "vina_exh16": -8.55,
+    "vinardo_exh16": -8.54
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3707331",
+    "pref_name": "ROLAPITANT",
+    "mw": 500.5,
+    "stage1_affinity": -8.53,
+    "vina_exh16": -8.53,
+    "vinardo_exh16": -8.13
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989973",
+    "pref_name": "PEXIDARTINIB HYDROCHLORIDE",
+    "mw": 454.3,
+    "stage1_affinity": -8.5,
+    "vina_exh16": -8.53,
+    "vinardo_exh16": -9.23
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2178422",
+    "pref_name": "RIMEGEPANT",
+    "mw": 534.6,
+    "stage1_affinity": -8.51,
+    "vina_exh16": -8.52,
+    "vinardo_exh16": -8.76
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201740",
+    "pref_name": "NILOTINIB HYDROCHLORIDE MONOHYDRATE",
+    "mw": 584.0,
+    "stage1_affinity": -8.49,
+    "vina_exh16": -8.49,
+    "vinardo_exh16": -9.0
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3188267",
+    "pref_name": "CAPMATINIB",
+    "mw": 412.4,
+    "stage1_affinity": -8.47,
+    "vina_exh16": -8.49,
+    "vinardo_exh16": -8.54
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1517",
+    "pref_name": "OXYTETRACYCLINE",
+    "mw": 460.4,
+    "stage1_affinity": -8.49,
+    "vina_exh16": -8.48,
+    "vinardo_exh16": -6.65
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3301607",
+    "pref_name": "FILGOTINIB",
+    "mw": 425.5,
+    "stage1_affinity": -8.49,
+    "vina_exh16": -8.48,
+    "vinardo_exh16": -8.69
+   },
+   {
+    "molecule_chembl_id": "CHEMBL344159",
+    "pref_name": "TOLVAPTAN",
+    "mw": 448.9,
+    "stage1_affinity": -8.48,
+    "vina_exh16": -8.47,
+    "vinardo_exh16": -7.64
+   },
+   {
+    "molecule_chembl_id": "CHEMBL6068334",
+    "pref_name": "SITAGLIPTIN HYDROCHLORIDE MONOHYDRATE",
+    "mw": 461.8,
+    "stage1_affinity": -8.4,
+    "vina_exh16": -8.38,
+    "vinardo_exh16": -8.56
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201149",
+    "pref_name": "NALTREXONE HYDROCHLORIDE",
+    "mw": 377.9,
+    "stage1_affinity": -8.31,
+    "vina_exh16": -8.36,
+    "vinardo_exh16": -6.1
+   },
+   {
+    "molecule_chembl_id": "CHEMBL454950",
+    "pref_name": "TETRACYCLINE HYDROCHLORIDE",
+    "mw": 480.9,
+    "stage1_affinity": -8.32,
+    "vina_exh16": -8.34,
+    "vinardo_exh16": -6.65
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2146063",
+    "pref_name": "CHLORTETRACYCLINE HYDROCHLORIDE",
+    "mw": 515.4,
+    "stage1_affinity": -8.24,
+    "vina_exh16": -8.27,
+    "vinardo_exh16": -5.99
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2218896",
+    "pref_name": "NABILONE",
+    "mw": 372.6,
+    "stage1_affinity": -8.24,
+    "vina_exh16": -8.24,
+    "vinardo_exh16": -9.01
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1770248",
+    "pref_name": "ERTUGLIFLOZIN",
+    "mw": 436.9,
+    "stage1_affinity": -8.22,
+    "vina_exh16": -8.21,
+    "vinardo_exh16": -8.54
+   },
+   {
+    "molecule_chembl_id": "CHEMBL255863",
+    "pref_name": "NILOTINIB",
+    "mw": 529.5,
+    "stage1_affinity": -8.28,
+    "vina_exh16": -8.11,
+    "vinardo_exh16": -8.87
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4582651",
+    "pref_name": "PRALSETINIB",
+    "mw": 533.6,
+    "stage1_affinity": -8.35,
+    "vina_exh16": -8.02,
+    "vinardo_exh16": -9.82
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4250860",
+    "pref_name": "DANICOPAN",
+    "mw": 580.4,
+    "stage1_affinity": -8.28,
+    "vina_exh16": -7.5,
+    "vinardo_exh16": -7.41
+   },
+   {
+    "molecule_chembl_id": "REF_ADP",
+    "pref_name": "ADP (natural nucleotide reference)",
+    "mw": 427.2,
+    "stage1_affinity": -7.2,
+    "vina_exh16": -7.28,
+    "vinardo_exh16": -7.89
+   },
+   {
+    "molecule_chembl_id": "REF_ATP",
+    "pref_name": "ATP (natural nucleotide reference)",
+    "mw": 507.2,
+    "stage1_affinity": -6.5,
+    "vina_exh16": -6.76,
+    "vinardo_exh16": -7.34
+   }
+  ],
+  "mutation_site": [
+   {
+    "molecule_chembl_id": "CHEMBL603",
+    "pref_name": "ZAFIRLUKAST",
+    "mw": 575.7,
+    "stage1_affinity": -8.23,
+    "vina_exh16": -8.56,
+    "vinardo_exh16": -7.03
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989868",
+    "pref_name": "TUCATINIB",
+    "mw": 480.5,
+    "stage1_affinity": -8.41,
+    "vina_exh16": -8.39,
+    "vinardo_exh16": -9.81
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201108",
+    "pref_name": "CONIVAPTAN HYDROCHLORIDE",
+    "mw": 535.0,
+    "stage1_affinity": -8.28,
+    "vina_exh16": -8.26,
+    "vinardo_exh16": -8.89
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200976",
+    "pref_name": "IDARUBICIN HYDROCHLORIDE",
+    "mw": 534.0,
+    "stage1_affinity": -8.13,
+    "vina_exh16": -8.14,
+    "vinardo_exh16": -6.99
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1755",
+    "pref_name": "CONIVAPTAN",
+    "mw": 498.6,
+    "stage1_affinity": -8.12,
+    "vina_exh16": -8.12,
+    "vinardo_exh16": -8.16
+   },
+   {
+    "molecule_chembl_id": "CHEMBL608533",
+    "pref_name": "MIDOSTAURIN",
+    "mw": 570.6,
+    "stage1_affinity": -8.08,
+    "vina_exh16": -8.08,
+    "vinardo_exh16": -5.85
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105708",
+    "pref_name": "PONATINIB HYDROCHLORIDE",
+    "mw": 569.0,
+    "stage1_affinity": -8.05,
+    "vina_exh16": -8.05,
+    "vinardo_exh16": -8.74
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1171837",
+    "pref_name": "PONATINIB",
+    "mw": 532.6,
+    "stage1_affinity": -7.98,
+    "vina_exh16": -8.04,
+    "vinardo_exh16": -8.65
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2103870",
+    "pref_name": "LUMACAFTOR",
+    "mw": 452.4,
+    "stage1_affinity": -8.0,
+    "vina_exh16": -8.02,
+    "vinardo_exh16": -8.12
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2005186",
+    "pref_name": "BELUMOSUDIL",
+    "mw": 452.5,
+    "stage1_affinity": -7.7,
+    "vina_exh16": -8.02,
+    "vinardo_exh16": -8.82
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4802130",
+    "pref_name": "BELUMOSUDIL MESYLATE",
+    "mw": 548.6,
+    "stage1_affinity": -8.06,
+    "vina_exh16": -8.01,
+    "vinardo_exh16": -8.81
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989937",
+    "pref_name": "CAPMATINIB HYDROCHLORIDE",
+    "mw": 503.4,
+    "stage1_affinity": -7.89,
+    "vina_exh16": -7.9,
+    "vinardo_exh16": -8.47
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200368",
+    "pref_name": "BENTIROMIDE",
+    "mw": 404.4,
+    "stage1_affinity": -7.93,
+    "vina_exh16": -7.89,
+    "vinardo_exh16": -8.35
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4582651",
+    "pref_name": "PRALSETINIB",
+    "mw": 533.6,
+    "stage1_affinity": -7.79,
+    "vina_exh16": -7.87,
+    "vinardo_exh16": -9.16
+   },
+   {
+    "molecule_chembl_id": "CHEMBL256907",
+    "pref_name": "MARAVIROC",
+    "mw": 513.7,
+    "stage1_affinity": -7.86,
+    "vina_exh16": -7.86,
+    "vinardo_exh16": -6.21
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1599768",
+    "pref_name": "PYRANTEL PAMOATE",
+    "mw": 594.7,
+    "stage1_affinity": -7.76,
+    "vina_exh16": -7.84,
+    "vinardo_exh16": -7.99
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3358920",
+    "pref_name": "ETRASIMOD",
+    "mw": 457.5,
+    "stage1_affinity": -7.83,
+    "vina_exh16": -7.83,
+    "vinardo_exh16": -7.78
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2178422",
+    "pref_name": "RIMEGEPANT",
+    "mw": 534.6,
+    "stage1_affinity": -7.86,
+    "vina_exh16": -7.81,
+    "vinardo_exh16": -7.12
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200969",
+    "pref_name": "DUTASTERIDE",
+    "mw": 528.5,
+    "stage1_affinity": -7.83,
+    "vina_exh16": -7.81,
+    "vinardo_exh16": -7.63
+   },
+   {
+    "molecule_chembl_id": "CHEMBL481",
+    "pref_name": "IRINOTECAN",
+    "mw": 586.7,
+    "stage1_affinity": -7.82,
+    "vina_exh16": -7.81,
+    "vinardo_exh16": -6.81
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3188267",
+    "pref_name": "CAPMATINIB",
+    "mw": 412.4,
+    "stage1_affinity": -7.79,
+    "vina_exh16": -7.79,
+    "vinardo_exh16": -8.61
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1237021",
+    "pref_name": "LURASIDONE",
+    "mw": 492.7,
+    "stage1_affinity": -7.75,
+    "vina_exh16": -7.76,
+    "vinardo_exh16": -6.17
+   },
+   {
+    "molecule_chembl_id": "CHEMBL255863",
+    "pref_name": "NILOTINIB",
+    "mw": 529.5,
+    "stage1_affinity": -7.73,
+    "vina_exh16": -7.75,
+    "vinardo_exh16": -7.86
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105755",
+    "pref_name": "NALDEMEDINE",
+    "mw": 570.6,
+    "stage1_affinity": -7.81,
+    "vina_exh16": -7.72,
+    "vinardo_exh16": -7.83
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3311228",
+    "pref_name": "OTESECONAZOLE",
+    "mw": 527.4,
+    "stage1_affinity": -7.74,
+    "vina_exh16": -7.72,
+    "vinardo_exh16": -8.44
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1607480",
+    "pref_name": "OXYTETRACYCLINE HYDROCHLORIDE",
+    "mw": 496.9,
+    "stage1_affinity": -7.72,
+    "vina_exh16": -7.72,
+    "vinardo_exh16": -5.61
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200877",
+    "pref_name": "FLUMETHASONE PIVALATE",
+    "mw": 494.6,
+    "stage1_affinity": -7.72,
+    "vina_exh16": -7.72,
+    "vinardo_exh16": -6.55
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2364638",
+    "pref_name": "UBROGEPANT",
+    "mw": 549.5,
+    "stage1_affinity": -7.69,
+    "vina_exh16": -7.71,
+    "vinardo_exh16": -6.74
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1596",
+    "pref_name": "CARBENICILLIN INDANYL",
+    "mw": 494.6,
+    "stage1_affinity": -7.7,
+    "vina_exh16": -7.7,
+    "vinardo_exh16": -7.15
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1621",
+    "pref_name": "PALIPERIDONE",
+    "mw": 426.5,
+    "stage1_affinity": -7.75,
+    "vina_exh16": -7.69,
+    "vinardo_exh16": -6.99
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4204794",
+    "pref_name": "AVAPRITINIB",
+    "mw": 498.6,
+    "stage1_affinity": -7.7,
+    "vina_exh16": -7.69,
+    "vinardo_exh16": -7.46
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201231",
+    "pref_name": "PREDNISOLONE PHOSPHORIC ACID",
+    "mw": 440.4,
+    "stage1_affinity": -7.67,
+    "vina_exh16": -7.67,
+    "vinardo_exh16": -6.35
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201302",
+    "pref_name": "DEXAMETHASONE PHOSPHORIC ACID",
+    "mw": 472.4,
+    "stage1_affinity": -7.67,
+    "vina_exh16": -7.66,
+    "vinardo_exh16": -6.44
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200973",
+    "pref_name": "ESTRADIOL CYPIONATE",
+    "mw": 396.6,
+    "stage1_affinity": -7.72,
+    "vina_exh16": -7.63,
+    "vinardo_exh16": -7.65
+   },
+   {
+    "molecule_chembl_id": "CHEMBL254316",
+    "pref_name": "RALTEGRAVIR",
+    "mw": 444.4,
+    "stage1_affinity": -7.65,
+    "vina_exh16": -7.62,
+    "vinardo_exh16": -7.22
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989871",
+    "pref_name": "AVACOPAN",
+    "mw": 581.6,
+    "stage1_affinity": -7.73,
+    "vina_exh16": -7.56,
+    "vinardo_exh16": -7.59
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3786343",
+    "pref_name": "OLMUTINIB",
+    "mw": 486.6,
+    "stage1_affinity": -7.61,
+    "vina_exh16": -7.54,
+    "vinardo_exh16": -7.93
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989691",
+    "pref_name": "ELTROMBOPAG OLAMINE",
+    "mw": 564.6,
+    "stage1_affinity": -7.72,
+    "vina_exh16": -7.53,
+    "vinardo_exh16": -8.25
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2028663",
+    "pref_name": "DABRAFENIB",
+    "mw": 519.6,
+    "stage1_affinity": -7.6,
+    "vina_exh16": -7.37,
+    "vinardo_exh16": -7.58
+   },
+   {
+    "molecule_chembl_id": "CHEMBL272427",
+    "pref_name": "TAURURSODIOL",
+    "mw": 499.7,
+    "stage1_affinity": -7.66,
+    "vina_exh16": -6.63,
+    "vinardo_exh16": -6.48
+   },
+   {
+    "molecule_chembl_id": "REF_ADP",
+    "pref_name": "ADP (natural nucleotide reference)",
+    "mw": 427.2,
+    "stage1_affinity": -6.36,
+    "vina_exh16": -6.43,
+    "vinardo_exh16": -5.9
+   },
+   {
+    "molecule_chembl_id": "REF_ATP",
+    "pref_name": "ATP (natural nucleotide reference)",
+    "mw": 507.2,
+    "stage1_affinity": -6.9,
+    "vina_exh16": -6.39,
+    "vinardo_exh16": -7.78
+   }
+  ],
+  "pseudokinase_best": [
+   {
+    "molecule_chembl_id": "CHEMBL1201740",
+    "pref_name": "NILOTINIB HYDROCHLORIDE MONOHYDRATE",
+    "mw": 584.0,
+    "stage1_affinity": -7.77,
+    "vina_exh16": -8.47,
+    "vinardo_exh16": -9.32
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105711",
+    "pref_name": "TOFOGLIFLOZIN",
+    "mw": 404.5,
+    "stage1_affinity": -8.38,
+    "vina_exh16": -8.41,
+    "vinardo_exh16": -8.21
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3137330",
+    "pref_name": "CABOTEGRAVIR SODIUM",
+    "mw": 427.3,
+    "stage1_affinity": -7.79,
+    "vina_exh16": -8.41,
+    "vinardo_exh16": -8.04
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2110731",
+    "pref_name": "TOFOGLIFLOZIN ANHYDROUS",
+    "mw": 386.4,
+    "stage1_affinity": -8.4,
+    "vina_exh16": -8.4,
+    "vinardo_exh16": -7.08
+   },
+   {
+    "molecule_chembl_id": "CHEMBL255863",
+    "pref_name": "NILOTINIB",
+    "mw": 529.5,
+    "stage1_affinity": -7.87,
+    "vina_exh16": -8.32,
+    "vinardo_exh16": -8.67
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200799",
+    "pref_name": "TRAVOPROST",
+    "mw": 500.6,
+    "stage1_affinity": -8.42,
+    "vina_exh16": -8.31,
+    "vinardo_exh16": -11.6
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989867",
+    "pref_name": "BICTEGRAVIR SODIUM",
+    "mw": 471.4,
+    "stage1_affinity": -8.35,
+    "vina_exh16": -8.3,
+    "vinardo_exh16": -8.17
+   },
+   {
+    "molecule_chembl_id": "CHEMBL256997",
+    "pref_name": "ATALUREN",
+    "mw": 284.2,
+    "stage1_affinity": -8.21,
+    "vina_exh16": -8.2,
+    "vinardo_exh16": -8.78
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1549",
+    "pref_name": "HYDROCORTISONE CYPIONATE",
+    "mw": 486.6,
+    "stage1_affinity": -8.21,
+    "vina_exh16": -8.18,
+    "vinardo_exh16": -8.35
+   },
+   {
+    "molecule_chembl_id": "CHEMBL605846",
+    "pref_name": "OLODATEROL",
+    "mw": 386.4,
+    "stage1_affinity": -8.17,
+    "vina_exh16": -8.17,
+    "vinardo_exh16": -8.83
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3989973",
+    "pref_name": "PEXIDARTINIB HYDROCHLORIDE",
+    "mw": 454.3,
+    "stage1_affinity": -7.96,
+    "vina_exh16": -8.06,
+    "vinardo_exh16": -9.12
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2103870",
+    "pref_name": "LUMACAFTOR",
+    "mw": 452.4,
+    "stage1_affinity": -7.85,
+    "vina_exh16": -8.05,
+    "vinardo_exh16": -8.63
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2005186",
+    "pref_name": "BELUMOSUDIL",
+    "mw": 452.5,
+    "stage1_affinity": -8.03,
+    "vina_exh16": -8.03,
+    "vinardo_exh16": -8.4
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105743",
+    "pref_name": "OLODATEROL HYDROCHLORIDE",
+    "mw": 422.9,
+    "stage1_affinity": -7.99,
+    "vina_exh16": -8.01,
+    "vinardo_exh16": -8.72
+   },
+   {
+    "molecule_chembl_id": "CHEMBL21333",
+    "pref_name": "PRANLUKAST",
+    "mw": 481.5,
+    "stage1_affinity": -7.79,
+    "vina_exh16": -7.98,
+    "vinardo_exh16": -9.14
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3402762",
+    "pref_name": "TEPOTINIB",
+    "mw": 492.6,
+    "stage1_affinity": -7.97,
+    "vina_exh16": -7.97,
+    "vinardo_exh16": -8.98
+   },
+   {
+    "molecule_chembl_id": "CHEMBL3813873",
+    "pref_name": "PEXIDARTINIB",
+    "mw": 417.8,
+    "stage1_affinity": -7.67,
+    "vina_exh16": -7.96,
+    "vinardo_exh16": -9.09
+   },
+   {
+    "molecule_chembl_id": "CHEMBL25202",
+    "pref_name": "TAMIBAROTENE",
+    "mw": 351.4,
+    "stage1_affinity": -7.93,
+    "vina_exh16": -7.94,
+    "vinardo_exh16": -6.85
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201288",
+    "pref_name": "DANTROLENE",
+    "mw": 314.3,
+    "stage1_affinity": -7.92,
+    "vina_exh16": -7.92,
+    "vinardo_exh16": -7.77
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2107826",
+    "pref_name": "VIBEGRON",
+    "mw": 444.5,
+    "stage1_affinity": -7.75,
+    "vina_exh16": -7.92,
+    "vinardo_exh16": -8.49
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200893",
+    "pref_name": "PROTOKYLOL HYDROCHLORIDE",
+    "mw": 367.8,
+    "stage1_affinity": -7.97,
+    "vina_exh16": -7.91,
+    "vinardo_exh16": -9.19
+   },
+   {
+    "molecule_chembl_id": "CHEMBL4802130",
+    "pref_name": "BELUMOSUDIL MESYLATE",
+    "mw": 548.6,
+    "stage1_affinity": -7.72,
+    "vina_exh16": -7.89,
+    "vinardo_exh16": -8.41
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201273",
+    "pref_name": "PROTOKYLOL",
+    "mw": 331.4,
+    "stage1_affinity": -7.98,
+    "vina_exh16": -7.88,
+    "vinardo_exh16": -9.16
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1201284",
+    "pref_name": "CINACALCET",
+    "mw": 357.4,
+    "stage1_affinity": -7.73,
+    "vina_exh16": -7.85,
+    "vinardo_exh16": -5.24
+   },
+   {
+    "molecule_chembl_id": "CHEMBL465",
+    "pref_name": "DRONABINOL",
+    "mw": 314.5,
+    "stage1_affinity": -7.85,
+    "vina_exh16": -7.84,
+    "vinardo_exh16": -8.63
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1116",
+    "pref_name": "RALOXIFENE HYDROCHLORIDE",
+    "mw": 510.1,
+    "stage1_affinity": -7.75,
+    "vina_exh16": -7.8,
+    "vinardo_exh16": -8.89
+   },
+   {
+    "molecule_chembl_id": "CHEMBL941",
+    "pref_name": "IMATINIB",
+    "mw": 493.6,
+    "stage1_affinity": -7.69,
+    "vina_exh16": -7.8,
+    "vinardo_exh16": -9.61
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200935",
+    "pref_name": "DARIFENACIN HYDROBROMIDE",
+    "mw": 507.5,
+    "stage1_affinity": -7.78,
+    "vina_exh16": -7.78,
+    "vinardo_exh16": -6.21
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1073",
+    "pref_name": "GLIPIZIDE",
+    "mw": 445.6,
+    "stage1_affinity": -7.73,
+    "vina_exh16": -7.73,
+    "vinardo_exh16": -8.87
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2105755",
+    "pref_name": "NALDEMEDINE",
+    "mw": 570.6,
+    "stage1_affinity": -7.66,
+    "vina_exh16": -7.73,
+    "vinardo_exh16": -9.65
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200385",
+    "pref_name": "ARBUTAMINE HYDROCHLORIDE",
+    "mw": 353.9,
+    "stage1_affinity": -7.71,
+    "vina_exh16": -7.71,
+    "vinardo_exh16": -9.05
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1873475",
+    "pref_name": "IBRUTINIB",
+    "mw": 440.5,
+    "stage1_affinity": -7.7,
+    "vina_exh16": -7.7,
+    "vinardo_exh16": -8.46
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2218896",
+    "pref_name": "NABILONE",
+    "mw": 372.6,
+    "stage1_affinity": -7.72,
+    "vina_exh16": -7.68,
+    "vinardo_exh16": -8.42
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200493",
+    "pref_name": "NAFTIFINE HYDROCHLORIDE",
+    "mw": 323.9,
+    "stage1_affinity": -7.84,
+    "vina_exh16": -7.67,
+    "vinardo_exh16": -8.07
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1289926",
+    "pref_name": "AXITINIB",
+    "mw": 386.5,
+    "stage1_affinity": -7.68,
+    "vina_exh16": -7.67,
+    "vinardo_exh16": -8.43
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1108",
+    "pref_name": "DROPERIDOL",
+    "mw": 379.4,
+    "stage1_affinity": -7.67,
+    "vina_exh16": -7.67,
+    "vinardo_exh16": -7.35
+   },
+   {
+    "molecule_chembl_id": "CHEMBL1200963",
+    "pref_name": "BIMATOPROST",
+    "mw": 415.6,
+    "stage1_affinity": -7.69,
+    "vina_exh16": -7.6,
+    "vinardo_exh16": -9.97
+   },
+   {
+    "molecule_chembl_id": "CHEMBL2018096",
+    "pref_name": "IPRAGLIFLOZIN",
+    "mw": 404.5,
+    "stage1_affinity": -7.74,
+    "vina_exh16": -7.59,
+    "vinardo_exh16": -8.36
+   },
+   {
+    "molecule_chembl_id": "CHEMBL43064",
+    "pref_name": "CINNARIZINE",
+    "mw": 368.5,
+    "stage1_affinity": -7.66,
+    "vina_exh16": -7.56,
+    "vinardo_exh16": -7.09
+   },
+   {
+    "molecule_chembl_id": "CHEMBL787",
+    "pref_name": "MONTELUKAST",
+    "mw": 586.2,
+    "stage1_affinity": -7.69,
+    "vina_exh16": -7.29,
+    "vinardo_exh16": -7.73
+   },
+   {
+    "molecule_chembl_id": "REF_ADP",
+    "pref_name": "ADP (natural nucleotide reference)",
+    "mw": 427.2,
+    "stage1_affinity": -6.7,
+    "vina_exh16": -6.7,
+    "vinardo_exh16": -5.91
+   },
+   {
+    "molecule_chembl_id": "REF_ATP",
+    "pref_name": "ATP (natural nucleotide reference)",
+    "mw": 507.2,
+    "stage1_affinity": -6.84,
+    "vina_exh16": -5.94,
+    "vinardo_exh16": -6.86
+   }
+  ]
+ }
+}

@@ -8,7 +8,7 @@ Total target 180 seconds. One continuous recording is fine. Slides optional. Spe
 
 ## 0:25 to 1:00, verified mechanics and the hard stop fact (35 s)
 
-Show the exon strip. Three verified facts. The stop-gain allele makes a UGA stop in exon 17 of 23, and the cell destroys the transcript by nonsense-mediated decay a full 748 nucleotides before the last junction, fifteen times farther than the rule demands. The missense allele lands on a folded residue in the kinase domain, and a stability model now prices the damage at +2.41 kilocalories per mole, the same class as a well-known mild MVA mutation, and there is no druggable pocket there to aim a stabilizer at.
+Show the exon strip. Three verified facts. The stop-gain allele makes a UGA stop in exon 17 of 23, and the cell destroys the transcript by nonsense-mediated decay a full 748 nucleotides before the last junction, fifteen times farther than the rule demands. The missense allele lands on a folded residue in the kinase domain, and a stability model now prices the damage at +2.41 kilocalories per mole, the same class as a well-known mild MVA mutation. Two pocket finders agree there is no pocket at the mutation, and docking every approved drug against the whole domain, the nucleotide site included, turns up nothing that stands out from background. A tafamidis-style rescue for this allele would need a site nobody has found yet.
 
 ## 1:00 to 1:30, the screen that can not promote anything by itself (30 s)
 
@@ -16,7 +16,7 @@ Show the three-lane schematic. "We ran eighteen hundred approved drugs through t
 
 ## 1:30 to 2:20, the verdicts (50 s)
 
-"Two verdicts moved." First, the primary proposal moves from metformin to the chloroquine-hydroxychloroquine class. Aneuploid cells carry lysosomal stress they cannot shed, and chloroquine exploits exactly that, from the 2011 Tang Cell paper. Hydroxychloroquine's label establishes safety and effectiveness for malaria in children, with one honest caveat, the tablets cannot be split for small children under 31 kg, where the class's chloroquine syrup covers. Metformin stays as the backup because its safety record is unmatched, but its aneuploidy evidence is thin. Second, NMN is the best shot at actually raising BUBR1, the only published in-vivo raise, but it is a supplement, not an approved medication, so it is parked, not proposed. And amlexanox keeps its bench-only mention as the one restore-class molecule that addresses the NMD blocker directly.
+"Two verdicts moved." First, the primary proposal moves from metformin to the chloroquine-hydroxychloroquine class. Aneuploid cells carry lysosomal stress they cannot shed, and chloroquine exploits exactly that, from the 2011 Tang Cell paper. Hydroxychloroquine's label establishes safety and effectiveness for malaria in children, with one honest caveat, the tablets cannot be split for small children under 31 kg, where the class's chloroquine syrup covers. Metformin stays as the backup because its safety record is unmatched, but its aneuploidy evidence is thin. Second, NMN is the best shot at actually raising BUBR1, the only published in-vivo raise, but it is a supplement, not an approved medication, so it is parked, not proposed. Its approved-drug cousin niacin fails too: no BubR1 data anywhere, and its own label says pediatric safety is not established. And amlexanox keeps its bench-only mention as the one restore-class molecule that addresses the NMD blocker directly.
 
 ## 2:20 to 2:50, how anyone can prove us wrong (30 s)
 

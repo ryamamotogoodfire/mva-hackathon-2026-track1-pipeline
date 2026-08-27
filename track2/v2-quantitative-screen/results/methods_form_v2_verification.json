@@ -1,0 +1,29 @@
+{
+ "file": "/srv/silico-state/_shared/silico/experiments/exp_01m106wwwnf3v96ksdjnm81y59/worktree/experiments/experiment-4-m81y59/results/Silico-EVEE_track2_methods_description_form_v2.xlsx",
+ "sha256": "c1fc6b65fce8130ad609899ec955dd3622c548f6e3fd9d12674665a0132a80ca",
+ "bytes": 14713,
+ "sheet": "Track 2 methods",
+ "team_name": "Silico EVEE",
+ "answered_rows": [
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+ ],
+ "rows_extended_with_v2_additions": [
+  8,
+  10,
+  12,
+  14,
+  15,
+  16
+ ],
+ "roundtrip_readback_ok": true,
+ "track1_sheet_preserved_rows": 18
+}

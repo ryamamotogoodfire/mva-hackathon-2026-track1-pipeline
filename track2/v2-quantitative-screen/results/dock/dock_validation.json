@@ -1,0 +1,346 @@
+{
+ "tools": {
+  "smina": "/silico-tmp/dockwork/smina.static",
+  "smina_version": "Smina Oct 15 2019.  Based on AutoDock Vina 1.1.2.",
+  "p2rank": "/silico-tmp/dockwork/p2rank_2.4.2/prank",
+  "java_bin": "/silico-tmp/dockwork/jdk-21.0.12.1+1-jre/bin",
+  "java_version": "openjdk version \"21.0.12.1\" 2026-08-18 LTS"
+ },
+ "p2rank_af_human": [
+  {
+   "rank": 1,
+   "name": "pocket1",
+   "score": 8.86,
+   "probability": 0.406,
+   "center": [
+    -19.8719,
+    -23.9832,
+    4.3183
+   ],
+   "residue_ids": "A_722 A_724 A_727 A_777 A_778 A_795 A_797 A_799 A_801 A_803 A_804 A_832 A_834 A_913 A_914",
+   "dist_to_atp_site_A": 5.4,
+   "dist_to_N1002_A": 29.98
+  },
+  {
+   "rank": 2,
+   "name": "pocket2",
+   "score": 3.85,
+   "probability": 0.122,
+   "center": [
+    -17.324,
+    -3.9758,
+    -6.2524
+   ],
+   "residue_ids": "A_1047 A_1048 A_1050 A_769 A_770 A_772 A_782 A_791 A_842 A_846",
+   "dist_to_atp_site_A": 5.71,
+   "dist_to_N1002_A": 35.66
+  },
+  {
+   "rank": 3,
+   "name": "pocket3",
+   "score": 2.18,
+   "probability": 0.043,
+   "center": [
+    -39.5219,
+    0.94,
+    4.0713
+   ],
+   "residue_ids": "A_1020 A_1023 A_1028 A_861 A_864 A_865 A_893 A_902 A_904",
+   "dist_to_atp_site_A": 13.67,
+   "dist_to_N1002_A": 25.05
+  },
+  {
+   "rank": 4,
+   "name": "pocket4",
+   "score": 2.08,
+   "probability": 0.039,
+   "center": [
+    13.0522,
+    25.7439,
+    -6.4378
+   ],
+   "residue_ids": "A_102 A_127 A_131 A_30 A_32 A_86 A_89 A_92 A_96 A_98 A_99",
+   "dist_to_atp_site_A": 41.76,
+   "dist_to_N1002_A": 63.71
+  },
+  {
+   "rank": 5,
+   "name": "pocket5",
+   "score": 1.51,
+   "probability": 0.018,
+   "center": [
+    -5.1878,
+    32.5154,
+    -21.7258
+   ],
+   "residue_ids": "A_402 A_410 A_414 A_415 A_418 A_64 A_67 A_68",
+   "dist_to_atp_site_A": 40.19,
+   "dist_to_N1002_A": 67.46
+  },
+  {
+   "rank": 6,
+   "name": "pocket6",
+   "score": 1.29,
+   "probability": 0.012,
+   "center": [
+    -21.1787,
+    -9.3517,
+    -2.2117
+   ],
+   "residue_ids": "A_772 A_780 A_793 A_841 A_843 A_889",
+   "dist_to_atp_site_A": 3.28,
+   "dist_to_N1002_A": 30.41
+  },
+  {
+   "rank": 7,
+   "name": "pocket7",
+   "score": 0.97,
+   "probability": 0.005,
+   "center": [
+    31.1676,
+    10.7169,
+    -19.8868
+   ],
+   "residue_ids": "A_143 A_158 A_174 A_177",
+   "dist_to_atp_site_A": 50.16,
+   "dist_to_N1002_A": 79.88
+  },
+  {
+   "rank": 8,
+   "name": "pocket8",
+   "score": 0.81,
+   "probability": 0.002,
+   "center": [
+    -27.9066,
+    -13.1949,
+    -15.6646
+   ],
+   "residue_ids": "A_764 A_766 A_785 A_790 A_792 A_835 A_837 A_839",
+   "dist_to_atp_site_A": 8.76,
+   "dist_to_N1002_A": 42.56
+  }
+ ],
+ "p2rank_6jkm_fly": [
+  {
+   "rank": 1,
+   "name": "pocket1",
+   "score": 23.25,
+   "probability": 0.887,
+   "center": [
+    5.1642,
+    24.2669,
+    23.8746
+   ],
+   "residue_ids": "A_1181 A_1182 A_1189 A_1202 A_1204 A_1213 A_1234 A_1236 A_1248 A_1250 A_1252 A_1253 A_1254 A_1255 A_1256 A_1257 A_1259 A_1260 A_1305 A_1308 A_1325 A_1326 A_1327"
+  },
+  {
+   "rank": 2,
+   "name": "pocket2",
+   "score": 4.9,
+   "probability": 0.221,
+   "center": [
+    3.1233,
+    40.4824,
+    25.7689
+   ],
+   "residue_ids": "A_1150 A_1152 A_1217 A_1218 A_1221 A_1235 A_1236"
+  },
+  {
+   "rank": 3,
+   "name": "pocket3",
+   "score": 3.99,
+   "probability": 0.159,
+   "center": [
+    14.181,
+    17.2818,
+    37.577
+   ],
+   "residue_ids": "A_1300 A_1301 A_1302 A_1303 A_1304 A_1305 A_1346 A_1350 A_1351 A_1366 A_1369 A_1370 A_1373 A_1377 A_1383"
+  },
+  {
+   "rank": 4,
+   "name": "pocket4",
+   "score": 2.96,
+   "probability": 0.096,
+   "center": [
+    1.5511,
+    24.1748,
+    34.4188
+   ],
+   "residue_ids": "A_1186 A_1204 A_1206 A_1210 A_1301 A_1326 A_1328 A_1329"
+  },
+  {
+   "rank": 5,
+   "name": "pocket5",
+   "score": 2.05,
+   "probability": 0.045,
+   "center": [
+    16.4972,
+    37.1335,
+    45.6777
+   ],
+   "residue_ids": "A_1293 A_1296 A_1333 A_1334 A_1338 A_1339 A_1340 A_1363 A_1364 A_1423 A_1424 A_1426"
+  },
+  {
+   "rank": 6,
+   "name": "pocket6",
+   "score": 1.17,
+   "probability": 0.009,
+   "center": [
+    -6.8623,
+    36.9669,
+    38.0763
+   ],
+   "residue_ids": "A_1135 A_1138 A_1139 A_1143 A_1144 A_1211"
+  },
+  {
+   "rank": 7,
+   "name": "pocket7",
+   "score": 1.16,
+   "probability": 0.009,
+   "center": [
+    1.3597,
+    43.2864,
+    35.0307
+   ],
+   "residue_ids": "A_1141 A_1143 A_1146 A_1215 A_1218 A_1219"
+  },
+  {
+   "rank": 8,
+   "name": "pocket8",
+   "score": 1.01,
+   "probability": 0.006,
+   "center": [
+    -1.0463,
+    29.2563,
+    39.6499
+   ],
+   "residue_ids": "A_1129 A_1131 A_1134 A_1209 A_1210 A_1212 A_1328 A_1329"
+  },
+  {
+   "rank": 9,
+   "name": "pocket9",
+   "score": 0.99,
+   "probability": 0.005,
+   "center": [
+    21.0811,
+    33.757,
+    41.1079
+   ],
+   "residue_ids": "A_1290 A_1293 A_1294 A_1364 A_1426 A_1427 A_1429"
+  },
+  {
+   "rank": 10,
+   "name": "pocket10",
+   "score": 0.88,
+   "probability": 0.004,
+   "center": [
+    7.2432,
+    23.0219,
+    41.069
+   ],
+   "residue_ids": "A_1129 A_1300 A_1301 A_1329 A_1346"
+  }
+ ],
+ "p2rank_seconds": 15.9,
+ "adp_redock_6jkm": {
+  "box": {
+   "center": [
+    4.363,
+    22.753,
+    25.849
+   ],
+   "size": [
+    20.0,
+    20.0,
+    23.438
+   ]
+  },
+  "seconds": 8.5,
+  "n_poses": 9,
+  "top_pose": {
+   "affinity": -7.55669,
+   "rmsd_to_crystal_A": 6.03
+  },
+  "best_rmsd_pose": {
+   "affinity": -7.39398,
+   "rmsd_to_crystal_A": 3.37
+  },
+  "all_poses": [
+   {
+    "affinity": -7.55669,
+    "rmsd_to_crystal_A": 6.03
+   },
+   {
+    "affinity": -7.5225,
+    "rmsd_to_crystal_A": 6.99
+   },
+   {
+    "affinity": -7.40247,
+    "rmsd_to_crystal_A": 4.51
+   },
+   {
+    "affinity": -7.39398,
+    "rmsd_to_crystal_A": 3.37
+   },
+   {
+    "affinity": -7.34248,
+    "rmsd_to_crystal_A": 5.41
+   },
+   {
+    "affinity": -7.21478,
+    "rmsd_to_crystal_A": 6.61
+   },
+   {
+    "affinity": -7.20979,
+    "rmsd_to_crystal_A": 8.19
+   },
+   {
+    "affinity": -7.09872,
+    "rmsd_to_crystal_A": 6.84
+   },
+   {
+    "affinity": -7.09012,
+    "rmsd_to_crystal_A": 7.9
+   }
+  ],
+  "embed_failures": []
+ },
+ "nucleotide_docking_human_af": {
+  "box": {
+   "center": [
+    -18.587,
+    -9.415,
+    -1.449
+   ],
+   "size": [
+    29.849,
+    30.736,
+    30.245
+   ]
+  },
+  "scores": {
+   "ADP": -7.26,
+   "ATP": -6.73
+  }
+ },
+ "nucleotide_docking_fly_crystal": {
+  "scores": {
+   "ADP": -7.56
+  }
+ },
+ "throughput": {
+  "n_ligands": 5,
+  "exhaustiveness": 8,
+  "cpu": 1,
+  "seconds_total": 105.3,
+  "seconds_per_ligand_1cpu": 21.07,
+  "probe_scores": {
+   "imatinib": -8.26,
+   "hydroxychloroquine": -5.52,
+   "tafamidis": -5.97,
+   "sirolimus_fragment_ref": -5.83,
+   "niacin": -4.62
+  }
+ }
+}

@@ -95,6 +95,42 @@
    "claim": "openFDA enrichment: 1,151 of 1,811 drugs matched a US label; 962 labels carry a Pediatric Use section",
    "source": "results/screen_joined_summary.json",
    "key": "n_openfda_found; n_pediatric_section"
+  },
+  {
+   "id": "C-17",
+   "claim": "The NAD+ precursor class is absent from the 1,811-drug screen because of mechanism-record coverage, not scoring: ChEMBL 37 holds zero mechanism records for niacin (CHEMBL573) and nicotinamide (CHEMBL1140), and acipimox (CHEMBL345714) has one record with a null target and action 'Unknown'",
+   "source": "results/nad_precursor_grades.json",
+   "key": "screen_coverage_gap.why_the_nad_class_is_absent"
+  },
+  {
+   "id": "C-18",
+   "claim": "Niacin is an FDA prescription drug (NIACOR ANDA040378 immediate-release plus multiple extended-release ANDAs) whose labels state pediatric safety and effectiveness are not established (extended-release: 16 years and under); acipimox has no FDA label or application",
+   "source": "results/nad_precursor_label_snapshots.json",
+   "key": "niacor_ir.pediatric_use; niacin_er_chartwell.pediatric_use"
+  },
+  {
+   "id": "C-19",
+   "claim": "The BUBR1 nucleotide site is annotated by mapping the 14 ADP contacts of the Drosophila crystal 6JKM onto human residues 774, 781, 793, 795, 840-843, 886, 887, 889, 910, 911; the mapping recovers human K795 (the kinase-dead K795R residue) and puts the fly HRD aspartate at human R886, with 4 of 13 contacts identical",
+   "source": "results/atp_site_annotation.json",
+   "key": "human_atp_site_residues; mapping_anchor_check; alignment"
+  },
+  {
+   "id": "C-20",
+   "claim": "Two independent pocket finders agree there is no pocket at the mutation: p2rank's top pocket on AF-O60566-F1 is the nucleotide site (score 8.86, probability 0.406, contains K795) and its nearest pocket to N1002 is 25.05 angstrom away, while fpocket caps druggability at 0.169 overall and 0.111 in the domain",
+   "source": "<artifacts>/dock/dock_validation.json + results/fpocket_summary.json",
+   "key": "p2rank_af_human[0]; dist_to_N1002_A"
+  },
+  {
+   "id": "C-21",
+   "claim": "The docking instrument fails its own pose-recovery control: redocking ADP into 6JKM puts the top-scored pose 6.03 angstrom from the crystal pose, best-of-9 3.37 angstrom, against a 2 angstrom success bar",
+   "source": "<artifacts>/dock/dock_validation.json",
+   "key": "adp_redock_6jkm"
+  },
+  {
+   "id": "C-22",
+   "claim": "Docking 2240 approved molecules against three BUBR1 pockets returns no standout and no discrimination: ADP reaches only the 83rd percentile of the library in its own site with 372 ordinary drugs outscoring it, the known chaperone migalastat sits in the bottom 6 percent everywhere while lumacaftor sits above the 99th percentile in all three boxes, and no graded case candidate ranks near the top in any box, so the screen supports only the boundary statement that no approved molecule is a credible stabilizer candidate",
+   "source": "<artifacts>/dock/dock_screen_summary.json + results/dock/dock_named_candidates.json",
+   "key": "stage2 per box; named-candidate percentiles"
   }
  ]
 }

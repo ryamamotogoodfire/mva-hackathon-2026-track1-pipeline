@@ -1,0 +1,220 @@
+{
+ "source_structures": {
+  "6JKM": "Drosophila melanogaster BubR1 kinase domain, 1.95 A, ADP + 2 Mg bound (experimental evidence that this pseudokinase fold binds a nucleotide)",
+  "6JKK": "Drosophila melanogaster BubR1 kinase domain, 1.85 A, apo"
+ },
+ "structure_uniprot": "A1Z6I7 Drosophila melanogaster BubR1, NOT human: cross-species mapping required",
+ "human_target": "O60566 human BUB1B",
+ "adp_contact_residues_fly": [
+  [
+   1181,
+   "I",
+   4.0
+  ],
+  [
+   1189,
+   "V",
+   3.77
+  ],
+  [
+   1202,
+   "A",
+   3.47
+  ],
+  [
+   1204,
+   "K",
+   2.68
+  ],
+  [
+   1250,
+   "S",
+   4.02
+  ],
+  [
+   1251,
+   "E",
+   2.75
+  ],
+  [
+   1252,
+   "F",
+   3.53
+  ],
+  [
+   1253,
+   "S",
+   2.87
+  ],
+  [
+   1257,
+   "S",
+   3.93
+  ],
+  [
+   1305,
+   "D",
+   2.77
+  ],
+  [
+   1306,
+   "N",
+   2.95
+  ],
+  [
+   1308,
+   "L",
+   3.34
+  ],
+  [
+   1325,
+   "I",
+   3.8
+  ],
+  [
+   1326,
+   "D",
+   2.96
+  ]
+ ],
+ "mapped_site": [
+  {
+   "fly_res": 1181,
+   "fly_aa": "I",
+   "human_res": 774,
+   "human_aa": "I",
+   "min_dist_adp_A": 4.0
+  },
+  {
+   "fly_res": 1189,
+   "fly_aa": "V",
+   "human_res": 781,
+   "human_aa": "F",
+   "min_dist_adp_A": 3.77
+  },
+  {
+   "fly_res": 1202,
+   "fly_aa": "A",
+   "human_res": 793,
+   "human_aa": "V",
+   "min_dist_adp_A": 3.47
+  },
+  {
+   "fly_res": 1204,
+   "fly_aa": "K",
+   "human_res": 795,
+   "human_aa": "K",
+   "min_dist_adp_A": 2.68
+  },
+  {
+   "fly_res": 1250,
+   "fly_aa": "S",
+   "human_res": 840,
+   "human_aa": "N",
+   "min_dist_adp_A": 4.02
+  },
+  {
+   "fly_res": 1251,
+   "fly_aa": "E",
+   "human_res": 841,
+   "human_aa": "C",
+   "min_dist_adp_A": 2.75
+  },
+  {
+   "fly_res": 1252,
+   "fly_aa": "F",
+   "human_res": 842,
+   "human_aa": "F",
+   "min_dist_adp_A": 3.53
+  },
+  {
+   "fly_res": 1253,
+   "fly_aa": "S",
+   "human_res": null,
+   "human_aa": null,
+   "min_dist_adp_A": 2.87
+  },
+  {
+   "fly_res": 1257,
+   "fly_aa": "S",
+   "human_res": 843,
+   "human_aa": "T",
+   "min_dist_adp_A": 3.93
+  },
+  {
+   "fly_res": 1305,
+   "fly_aa": "D",
+   "human_res": 886,
+   "human_aa": "R",
+   "min_dist_adp_A": 2.77
+  },
+  {
+   "fly_res": 1306,
+   "fly_aa": "N",
+   "human_res": 887,
+   "human_aa": "C",
+   "min_dist_adp_A": 2.95
+  },
+  {
+   "fly_res": 1308,
+   "fly_aa": "L",
+   "human_res": 889,
+   "human_aa": "I",
+   "min_dist_adp_A": 3.34
+  },
+  {
+   "fly_res": 1325,
+   "fly_aa": "I",
+   "human_res": 910,
+   "human_aa": "V",
+   "min_dist_adp_A": 3.8
+  },
+  {
+   "fly_res": 1326,
+   "fly_aa": "D",
+   "human_res": 911,
+   "human_aa": "D",
+   "min_dist_adp_A": 2.96
+  }
+ ],
+ "human_atp_site_residues": [
+  774,
+  781,
+  793,
+  795,
+  840,
+  841,
+  842,
+  843,
+  886,
+  887,
+  889,
+  910,
+  911
+ ],
+ "mapping_anchor_check": {
+  "human_K795_recovered": true,
+  "note": "the fly catalytic Lys maps onto human K795, the residue mutated in the widely used BUBR1 kinase-dead K795R construct, which independently validates the cross-species mapping at the catalytic anchor"
+ },
+ "catalytic_degeneracy": {
+  "fly_HRD_asp_D1305": "maps to human R886 (Arg), matching the documented BUBR1 pseudokinase degeneracy (Suijkerbuijk 2012)",
+  "fly_DFG_asp_D1326": "maps to human D911 (conserved)"
+ },
+ "alignment": {
+  "method": "Biopython PairwiseAligner, global, blastp matrix, gap open -11 extend -1",
+  "score": 283.0,
+  "identical_contacts": 4,
+  "total_mapped_contacts": 13
+ },
+ "af_model_geometry": {
+  "model": "AF-O60566-F1-model_v6",
+  "site_centroid_xyz": [
+   -22.09,
+   -10.14,
+   -1.44
+  ],
+  "min_dist_centroid_to_N1002_A": 29.44,
+  "min_dist_centroid_to_L1012_A": 21.47,
+  "min_dist_centroid_to_I909_A": 7.9
+ }
+}

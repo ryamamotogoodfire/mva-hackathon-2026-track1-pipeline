@@ -1,0 +1,29 @@
+{
+ "niacor_ir": {
+  "brand": "Niacin",
+  "generic": "NIACIN",
+  "application_number": "ANDA040378",
+  "product_type": "HUMAN PRESCRIPTION DRUG",
+  "pediatric_use": "Pediatric Use Safety and effectiveness in children and adolescents have not been established.",
+  "use_in_specific_populations": "",
+  "indications_and_usage": "INDICATIONS AND USAGE I. Therapy with lipid-altering agents should be only one component of multiple risk factor intervention in those individuals at significantly increased risk for atherosclerotic vascular disease due to hypercholesterolemia. Nicotinic acid, alone or in combination with a bile-acid binding resin, is indicated as an adjunct to diet for the reduction of elevated total and LDL chol"
+ },
+ "niacin_er_chartwell": {
+  "brand": "NIACIN",
+  "generic": "NIACIN",
+  "application_number": "ANDA090892",
+  "product_type": "HUMAN PRESCRIPTION DRUG",
+  "pediatric_use": "8.4 Pediatric Use Safety and effectiveness of niacin therapy in pediatric patients (\u226416 years) have not been established.",
+  "use_in_specific_populations": "8 USE IN SPECIFIC POPULATIONS Pregnancy: Discontinue in patients with hyperlipidemia; assess individual risks and benefits in patients with hypertriglyceridemia. ( 8.1 ) Lactation: Advise patients not to breastfeed during treatment. ( 8.2 ) Renal impairment: Niacin extended-release tablets should be used with caution in patients with renal impairment. ( 5 , 8.6 ) Hepatic impairment: Niacin extended-release tablet is contra indicated in active liver disease or significant or unexplained hepatic dysfunction or unexplained elevations of serum transaminases. ( 4 , 5 , 5.3 , 8.7 ) 8.1 Pregnancy Risk Summary Discontinue niacin extended-release tablets when pregnancy is recognized in patients receiving the drug for the treatment of hyperlipidemia. Assess the individual risks and benefits of continuing niacin extended-release tablets during pregnancy in patients receiving the drug for the treatment of hypertriglyceridemia. Advise patients to inform their healthcare provider of a known or suspected pregnancy. The potential for embryofetal toxicity with the doses of niacin in niacin extended-release tablets is unknown. The available data on niacin extended-release tablets use in pregnant women are insufficient to evaluate for a drug- associated risk of major birth defects, miscarriage, or adverse maternal or fetal outcomes. Animal reproduction studies have not been conducted with niacin or with niacin extended-release tablets. Treatment of hypercholesterolemia is not generally necessar",
+  "indications_and_usage": "1 INDICATIONS AND USAGE Niacin extended-release tablet USP contains extended-release niacin (nicotinic acid), and is indicated: \u2022 To reduce elevated TC, LDL-C, Apo B and TG, and to increase HDL-C in patients with primary hyperlipidemia and mixed dyslipidemia. ( 1 ) \u2022 To reduce the risk of recurrent nonfatal myocardial infarction in patients with a history of myocardial infarction and hyperlipidemi"
+ },
+ "niacin_er_amneal": {
+  "brand": "Niacin",
+  "generic": "NIACIN",
+  "application_number": "ANDA204178",
+  "product_type": "HUMAN PRESCRIPTION DRUG",
+  "pediatric_use": "",
+  "use_in_specific_populations": "8 USE IN SPECIFIC POPULATIONS Pregnancy: Discontinue in patients with hyperlipidemia; assess individual risks and benefits in patients with hypertriglyceridemia. ( 8.1 ) Lactation: Advise patients not to breastfeed during treatment. ( 8.2 ) Renal impairment: Niacin extended-release should be used with caution in patients with renal impairment. ( 5 , 8.6 ) Hepatic impairment: Niacin extended-release is contraindicated in active liver disease or significant or unexplained hepatic dysfunction or unexplained elevations of serum transaminases. ( 4 , 5 , 5.3 , 8.7 ) 8.1 Pregnancy Risk Summary Discontinue niacin extended-release when pregnancy is recognized in patients receiving the drug for the treatment of hyperlipidemia. Assess the individual risks and benefits of continuing niacin extended-release during pregnancy in patients receiving the drug for the treatment of hypertriglyceridemia. Advise patients to inform their healthcare provider of a known or suspected pregnancy. The potential for embryofetal toxicity with the doses of niacin in niacin extended-release tablets is unknown. The available data on niacin extended-release use in pregnant women are insufficient to evaluate for a drug-associated risk of major birth defects, miscarriage, or adverse maternal or fetal outcomes. Animal reproduction studies have not been conducted with niacin or with niacin extended-release tablets. Treatment of hypercholesterolemia is not generally necessary during pregnancy. Atherosclerosis is a ",
+  "indications_and_usage": "1 INDICATIONS AND USAGE Therapy with lipid-altering agents should be only one component of multiple risk factor intervention in individuals at significantly increased risk for atherosclerotic vascular disease due to hyperlipidemia. Niacin therapy is indicated as an adjunct to diet when the response to a diet restricted in saturated fat and cholesterol and other nonpharmacologic measures alone has "
+ }
+}
