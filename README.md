@@ -123,6 +123,7 @@ Track 2 asks whether an existing approved medication is a plausible candidate ag
 
 - [track2/Silico-EVEE_track2_report.md](track2/Silico-EVEE_track2_report.md) is the full Track 2 submission report, including the official methods-description answers.
 - [track2/README.md](track2/README.md) documents the chapter and its reproduction steps.
+- [track2/v2-quantitative-screen/](track2/v2-quantitative-screen/) is the August 2026 follow-on: a quantitative full-FDA screen (network proximity, knowledge graph, LINCS reversal, per-allele structural tickets) re-grading the Track 2 list. It promotes the hydroxychloroquine/chloroquine class above metformin as the secondary-prevention hypothesis, grades NMN as the best biological (status-blocked) candidate, and leaves the headline case verdict unchanged.
 
 ## Acknowledgement
 

@@ -26,3 +26,8 @@ From this directory, with a Python 3.11+ environment that has only the standard 
 - The missense allele p.Asn1002Lys is a last-exon change inside the pseudokinase domain and escapes decay, class-consistent with instability-driven abundance loss.
 - No approved medication restores BUBR1 from these alleles. Metformin is proposed as a secondary-prevention hypothesis. Amlexanox is named at bench grade only.
 - Recorded rejections with reasons, ataluren, aminoglycosides, sirolimus and everolimus, checkpoint kinase inhibitors, aspirin, bortezomib and Hsp90 inhibitors.
+
+
+## Track 2 v2 (2026-08 follow-on)
+
+The quantitative re-grade of this candidate list lives in [v2-quantitative-screen/](v2-quantitative-screen/). Headlines: no approved medication restores BUBR1 (unchanged); the hydroxychloroquine/chloroquine class is promoted above metformin as the secondary-prevention hypothesis (Tang 2011 aneuploidy-selective evidence + established pediatric malaria label); NMN is the best biological but status-blocked route to raise BUBR1 (North 2014); every verdict update is recorded with its reason in [v2-quantitative-screen/results/candidate_grades_v2.md](v2-quantitative-screen/results/candidate_grades_v2.md).
